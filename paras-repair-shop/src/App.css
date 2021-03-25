@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App * {
+  /* border: red dotted 2px; */
+}
+
+.wrapper {
+  /* margin-top: 50px; */
+  /* margin: 0px;
+  padding: 0px; */
+
+  height:1700px;
+  width: 100%;
+  background: url("https://wallpaperaccess.com/full/2056565.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container{
+  padding-top: 20px;
+}
+
+.titleBox{
+  background-color: white;
+  margin: auto;
+  opacity: 50%;
+
+  width: 50%;
+}
+
+nav {
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+  box-shadow: 10px 10px;
+  /* border: rgb(40,44,52); */
+  /* margin-bottom: 50px; */
+}
+
+.image1{
+  margin-top:50px; 
+  width: 50.5%;
+  height: auto;
+  /* background-color: white; */
+}
+
+.image2{
+  width: 21% 
+}
+
+.homeMiddleSection{
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  /* margin: 0px 50px */
+}
