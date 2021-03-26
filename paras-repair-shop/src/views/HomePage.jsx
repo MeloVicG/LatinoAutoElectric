@@ -6,7 +6,7 @@ const HomePage = () => {
 
             <div className="wrapper">
                 <div className="container">
-
+                    <h1>THIS IS THE GITHUB COLLAB PRACTICE UPDATE</h1>
                     <h1 className="titleBox">Latinos Auto Electric</h1>
 
                     <nav style={{backgroundColor:"white"}}>
