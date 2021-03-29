@@ -5,7 +5,8 @@
 }
 
 .App * {
-  border: red dotted 2px;
+  /* border: red dotted 2px; */
+  outline: red dotted 2px;
 }
 
 .wrapper {
@@ -16,6 +17,7 @@
   height: 1700px;
   width: 100%;
   background: url("https://wallpaperaccess.com/full/2056565.jpg");
+  /* background-color: rgb(160,163,168); */
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -33,16 +35,25 @@
 }
 
 nav {
+  background-color:rgb(18,151,210);
+  font-size: 25px;
   margin: auto;
-  width: 90%;
+  /* width: 90%; */
   padding: 10px;
-  box-shadow: 10px 10px;
+  box-shadow: 0px 10px;
   /* border: rgb(40,44,52); */
   /* margin-bottom: 50px; */
 }
 
-.image1 {
-  margin-top: 50px;
+
+  nav a{
+    margin:25px;
+    margin-left: 600px;
+  }
+
+
+.image1{
+  margin-top:50px; 
   width: 50.5%;
   height: auto;
   /* background-color: white; */
@@ -52,21 +63,17 @@ nav {
   width: 21%;
 }
 
-.homeMiddleSection {
+
+.homeMidBox{
   display: flex;
   justify-content: center;
   align-content: space-between;
   /* margin: 0px 50px */
 }
 
-.ap-form-top {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
-}
 
-.form-group label {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
+.homeMidSection {
+  color:white;
+  margin:20px 250px;
+  font-size: 50px
 }
