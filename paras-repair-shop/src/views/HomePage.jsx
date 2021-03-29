@@ -1,3 +1,5 @@
+import { Link } from '@reach/router';
+import { useEffect } from 'react';
 
 const HomePage = () => {
 
@@ -23,7 +25,7 @@ const HomePage = () => {
                         <img className="image2" src="https://i.pinimg.com/originals/c1/9f/a5/c19fa5a2b6de80d4b5e8866f2cf36c0f.jpg" alt="second"/>
                     </div>
 
-                    <button><h1>Schedule Now!</h1></button>
+                        <Link to="/schedule"><button><h1>Schedule Now!</h1></button></Link>
 
                     <div className="homeMidBox" style={{color:"white", margin:"50px"}}>
                         {/* <div> */}
