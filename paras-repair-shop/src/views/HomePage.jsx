@@ -5,6 +5,7 @@ const HomePage = () => {
 
     return(
         <div className="App">
+            Vic figure this out!
 
             <div className="wrapper">
                 <div className="container">
