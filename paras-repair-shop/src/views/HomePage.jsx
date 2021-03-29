@@ -5,7 +5,7 @@ const HomePage = () => {
 
     return(
         <div className="App">
-
+        spence is poo poo head
             <div className="wrapper">
                 <div className="container">
                     <h1 className="titleBox">Latinos Auto Electric</h1>
