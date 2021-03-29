@@ -6,6 +6,7 @@ const HomePage = () => {
     return(
         <div className="App">
             Vic figure this out!
+
             <div className="wrapper">
                 <div className="container">
                     <h1 className="titleBox">Latinos Auto Electric</h1>
