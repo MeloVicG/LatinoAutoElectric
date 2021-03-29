@@ -13,18 +13,18 @@
   /* margin: 0px;
   padding: 0px; */
 
-  height:1700px;
+  height: 1700px;
   width: 100%;
   background: url("https://wallpaperaccess.com/full/2056565.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.container{
+.container {
   padding-top: 20px;
 }
 
-.titleBox{
+.titleBox {
   background-color: white;
   margin: auto;
   opacity: 50%;
@@ -41,20 +41,32 @@ nav {
   /* margin-bottom: 50px; */
 }
 
-.image1{
-  margin-top:50px; 
+.image1 {
+  margin-top: 50px;
   width: 50.5%;
   height: auto;
   /* background-color: white; */
 }
 
-.image2{
-  width: 21% 
+.image2 {
+  width: 21%;
 }
 
-.homeMiddleSection{
+.homeMiddleSection {
   display: flex;
   justify-content: center;
   align-content: space-between;
   /* margin: 0px 50px */
+}
+
+.ap-form-top {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.form-group label {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
 }
