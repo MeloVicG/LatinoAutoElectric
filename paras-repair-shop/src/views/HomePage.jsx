@@ -9,7 +9,7 @@ const HomePage = () => {
             <div className="wrapper">
                 <div className="container">
                     <h1 className="titleBox">Latinos Auto Electric</h1>
-
+            dksljaglkajhlasjh;osjah;oitsj;hgij
                     {/* has css */}
                     <nav style={{backgroundColor:"rgb(18,151,210)"}}>
                         <a className="navBarHome"href=""> Home </a> 
