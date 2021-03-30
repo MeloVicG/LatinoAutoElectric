@@ -4,9 +4,9 @@
   padding: 0px;
 }
 
-.App * {
+/* .App * {
   border: red dotted 2px;
-}
+} */
 
 .wrapper {
   /* margin-top: 50px; */
@@ -59,16 +59,59 @@ nav {
   /* margin: 0px 50px */
 }
 
-.ap-form-top {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
+.banner {
+  padding: 10px;
+  border: 2px solid;
+  margin: 30px;
 }
 
-.form-group label {
+.banner h1 {
+  font-family: "Brush Script MT";
+  font-weight: bold;
+  font-size: xx-large;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  top: -50px;
+  width: 15%;
+  margin-bottom: -40px;
+
+  background-color: white;
+}
+
+.ap-form-top {
+  display: block;
+  margin-top: -30px;
+}
+
+.form-row {
+  width: 100%;
+  justify-content: space-around;
+  text-align: left;
+  margin: 0.5%;
+  font-size: larger;
+}
+
+.form-group {
+  width: 30%;
+  margin: 0.5%;
+}
+
+.form-heading {
   display: flex;
+  font-size: x-large;
   justify-content: center;
   align-content: space-between;
+  background-color: #00b0f4;
+  box-shadow: 5px 5px;
+  margin: 5% 10% 5% 10%;
+}
+
+.confirm-group {
+  justify-content: center;
+  margin: 5% 25% 5% 25%;
+  border: 3px solid #00b0f4;
+  box-shadow: 5px 5px;
 }
 
 /* Updated */
