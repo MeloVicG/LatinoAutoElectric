@@ -6,13 +6,13 @@ const NavBar = ({appointments, setAppointments}) => {
     return (
         <div className="nav-bar-parent">
             <nav className="nav-bar">
-                <Link to="/" style={{margin:"25px", textDecoration:"none"}}>Home</Link> 
-                <Link to="/about" style={{margin:"25px", textDecoration:"none"}}>About</Link>  
-                <Link to="/schedule" style={{margin:"25px", textDecoration:"none"}}>Schedule</Link> 
-                <Link to="/services" style={{margin:"25px", textDecoration:"none"}}>Services</Link>  
-                <Link to="/directions" style={{margin:"25px", textDecoration:"none"}}>Location</Link>  
-                <Link to="/contact" style={{margin:"25px", textDecoration:"none"}}>Contact</Link>  
-                <Link to="/faq" style={{margin:"25px", textDecoration:"none"}}>FAQ</Link>  
+                <Link to="/" style={{textDecoration:"none"}}>Home</Link> 
+                <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link> 
+                <Link to="/services" style={{textDecoration:"none"}}>Services</Link>  
+                <Link to="/about" style={{textDecoration:"none"}}>About</Link>  
+                {/* <Link to="/directions" style={{textDecoration:"none"}}>Location</Link>   */}
+                {/* <Link to="/contact" style={{textDecoration:"none"}}>Contact</Link>   */}
+                <Link to="/faq" style={{textDecoration:"none"}}>FAQ</Link>  
             </nav>
         </div>
     )

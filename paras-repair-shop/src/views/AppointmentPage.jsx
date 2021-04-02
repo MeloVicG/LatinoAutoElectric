@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar';
 const AppointmentPage = () => {
 
     return (
-        <div>
+        <div className="wrapper">
             <h1 className="titleBox-2">Latinos Auto Electric</h1>
             <NavBar/>
             <div className="banner">

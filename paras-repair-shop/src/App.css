@@ -10,11 +10,11 @@
 
 .wrapper {
   /* margin-top: 50px; */
-  margin: 0px;
-  padding: 0px;
+  /* margin: 0px;
+  padding: 0px; */
 
   /* height: 1700px; */
-  width: 100%;
+  /* width: 100%; */
   background: url("https://wallpaperaccess.com/full/2056565.jpg");
   /* background-color: rgb(202,202,202); */
   background-repeat: no-repeat;
@@ -23,11 +23,6 @@
 
 .container {
   width: 100%;
-}
-
-.container-top {
-  padding-top: 20px;
-  /* background-color: white; */
 }
 
 .titleBox {
@@ -57,16 +52,16 @@
 
 .nav-bar {
   margin: auto;
-  margin-bottom: 50px;
-  width: 90%;
+  /* margin-bottom: 50px; */
+  width: 95%;
   padding: 10px;
-  box-shadow: 10px 10px;
-  border-radius: 15px;
-  min-height: 50px;
-  font-size: 25px;
+  box-shadow: 0px 5px 10px 10px;
+  border-radius: 10px;
+  /* min-height: 50px; */
+  font-size: 2px;
   text-decoration: none;
   background-color: #00b0f4;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* border: rgb(40,44,52); */
   /* margin-bottom: 50px; */
 }
@@ -98,10 +93,10 @@
   width: 50%;
 }
 
-.homeTopSection {
+/* .homeTopSection {
   min-height: 500px;
   background-color: #f0f0f0;
-}
+} */
 
 
 .homeMidSection {
@@ -114,21 +109,25 @@
 }
 
 .quote {
-  padding: 10%;
-  min-height: 100px;
-  color: white;
+  background-color: #00b0f4;
+  padding: 10px;
+  /* min-height: 100px; */
+  /* color: white; */
   font-size: 25px;
   font-weight: bolder;
   font-style: italic;
+  border: 1px solid black;
+  box-shadow: 0px 1px 10px 5px;
+  margin: 100px 0px 75px 0px;
 }
 
 .location-box {
   padding: 2%;
-  min-height: 100px;
-  background-color: #f0f0f0;
+  /* min-height: 100px; */
+  /* background-color: #f0f0f0; */
   display: inline-flex;
-  justify-content: space-around;
-  margin-bottom: 200px;
+  /* justify-content: space-around; */
+  margin-bottom: 100px;
 }
 
 .location-box-text {
@@ -136,14 +135,15 @@
 }
 
 .quick-schedule {
-  margin: 10%;
+  margin: 5%;
 }
 
 .quick-schedule button {
-  border-radius: 25px;
+  border-radius: 10px;
   border: 2px solid black;
   color: black;
   background-color: #00b0f4;
+  box-shadow: 0px 1px 10px 5px;
 }
 
 .banner {
@@ -213,10 +213,10 @@
   font-weight: bold;
 }
 
-footer {
-  background-color: #f0f0f0;
-  padding: 5%;
-}
+/* footer { */
+  /* background-color: #f0f0f0; */
+  /* padding: 5%; */
+/* } */
 
 /* Updated */
 .picture-paragraph-section {
