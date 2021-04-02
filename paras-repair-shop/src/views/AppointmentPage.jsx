@@ -1,21 +1,15 @@
 import React, {useEffect} from 'react';
 import AppointmentForm from '../components/AppointmentForm';
-
+import NavBar from '../components/NavBar';
 
 const AppointmentPage = () => {
 
     return (
         <div>
-            <nav style={{backgroundColor:"rgb(18,151,210)"}}>
-                <a className="navBarHome"href=""> Home </a> 
-                <a href="" style={{margin:"25px"}}> Schedule </a> 
-                <a href="" style={{margin:"25px"}}> Services </a> 
-                <a href="" style={{margin:"25px"}}> About / Staff </a> 
-                <a href="" style={{margin:"25px"}}> Contact / Location </a> 
-                <a href="" style={{margin:"25px"}}> FAQ </a> 
-            </nav>
+            <h1 className="titleBox-2">Latinos Auto Electric</h1>
+            <NavBar/>
             <div className="banner">
-                <h1>Schedule Appointment</h1>
+                <h1>Appointment</h1>
                 <AppointmentForm />
             </div>
             <h4>Contact us here with any questions or to schedule over the phone.</h4>

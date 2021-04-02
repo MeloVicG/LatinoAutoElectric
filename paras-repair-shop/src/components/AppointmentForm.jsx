@@ -27,79 +27,87 @@ const AppointmentForm = ({appointments, setAppointments}) => {
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
                 <div className="ap-form-top">
                     <label className="form-heading">Contact Info:</label>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>First Name:</label>
-                            <div>
-                                <input type="text" onChange={e => setFirstName(e.target.value)}/>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>First Name:</label>
+                                <div>
+                                    <input type="text" onChange={e => setFirstName(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Last Name:</label>
+                                <div>
+                                    <input type="text" onChange={e => setLastName(e.target.value)}/>
+                                </div>
                             </div>
                         </div>
-                        <div className="form-group">
-                            <label>Last Name:</label>
-                            <div>
-                                <input type="text" onChange={e => setLastName(e.target.value)}/>
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Email:</label>
+                                <div>
+                                    <input type="email" onChange={e => setEmail(e.target.value)}/>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Email:</label>
-                            <div>
-                                <input type="email" onChange={e => setEmail(e.target.value)}/>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label>Phone Number:</label>
-                            <div>
-                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                            <div className="form-group">
+                                <label>Phone Number:</label>
+                                <div>
+                                    <input type="text" onChange={e => setPhone(e.target.value)}/>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <label className="form-heading">Appointment Time:</label>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Select Date:</label>
-                            <div>
-                                <input type="date" onChange={e => setDate(e.target.value)}/>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Select Date:</label>
+                                <div>
+                                    <input type="date" onChange={e => setDate(e.target.value)}/>
+                                </div>
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label>Select Time:</label>
-                            <div>
-                                <input type="time" onChange={e => setTime(e.target.value)}/>
+                            <div className="form-group">
+                                <label>Select Time:</label>
+                                <div>
+                                    <input type="time" onChange={e => setTime(e.target.value)}/>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <label className="form-heading">Vehicle Info:</label>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Make:</label>
-                            <input type="text" onChange={e => setPhone(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>Model:</label>
-                            <input type="text" onChange={e => setPhone(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label> Year:</label>
-                            <input type="number" onChange={e => setPhone(e.target.value)}/>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Make:</label>
+                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                            </div>
+                            <div className="form-group">
+                                <label>Model:</label>
+                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                            </div>
+                            <div className="form-group">
+                                <label> Year:</label>
+                                <input type="number" onChange={e => setPhone(e.target.value)}/>
+                            </div>
                         </div>
                     </div>
                     <label className="form-heading">Helpful Info:</label>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Reason for Visit:</label>
-                            <div>
-                                <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
-                                    <option value=""></option>
-                                    <option value="Oil Change">Oil Change</option>
-                                </select> 
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Reason for Visit:</label>
+                                <div>
+                                    <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
+                                        <option value=""></option>
+                                        <option value="Oil Change">Oil Change</option>
+                                    </select> 
+                                </div>
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label>Additional Comments:</label>
-                            <div>
-                                <textarea onChange={e => setTime(e.target.value)} col="50" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                            <div className="form-group">
+                                <label>Additional Comments:</label>
+                                <div>
+                                    <textarea onChange={e => setTime(e.target.value)} col="50" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
