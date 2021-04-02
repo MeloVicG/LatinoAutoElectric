@@ -88,9 +88,9 @@ navBarHome {
     border: 1px black solid;
     margin: 0px 65px;
     padding: 20px;
-    background-color: white;
+    background-color: #00b0f4;
     box-shadow: 0px 1px 10px 5px;
-}
+} 
 
 .homeMidP {
     font-weight: bold;
