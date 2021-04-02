@@ -8,19 +8,6 @@
   border: red dotted 2px;
 } */
 
-.wrapper {
-  /* margin-top: 50px; */
-  /* margin: 0px;
-  padding: 0px; */
-
-  /* height: 1700px; */
-  /* width: 100%; */
-  background: url("https://wallpaperaccess.com/full/2056565.jpg");
-  /* background-color: rgb(202,202,202); */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .container {
   width: 100%;
 }
@@ -121,14 +108,7 @@
   margin: 100px 0px 75px 0px;
 }
 
-.location-box {
-  padding: 2%;
-  /* min-height: 100px; */
-  /* background-color: #f0f0f0; */
-  display: inline-flex;
-  /* justify-content: space-around; */
-  margin-bottom: 100px;
-}
+
 
 .location-box-text {
   padding: 5%;
