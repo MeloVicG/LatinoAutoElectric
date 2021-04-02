@@ -26,82 +26,102 @@ const AppointmentForm = ({appointments, setAppointments}) => {
             <form className="appointmentForm" >
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
                 <div className="ap-form-top">
-                    <div className="ap-form-left">
-                        <div className="form-group">
-                            <label>Select Date:</label>
-                            <div>
-                                <input type="date" onChange={e => setDate(e.target.value)}/>
+                    <label className="form-heading">Contact Info:</label>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>First Name:</label>
+                                <div>
+                                    <input type="text" onChange={e => setFirstName(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Last Name:</label>
+                                <div>
+                                    <input type="text" onChange={e => setLastName(e.target.value)}/>
+                                </div>
                             </div>
                         </div>
-                        <div className="form-group">
-                            <label>Select Time:</label>
-                            <div>
-                                <input type="time" onChange={e => setTime(e.target.value)}/>
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Email:</label>
+                                <div>
+                                    <input type="email" onChange={e => setEmail(e.target.value)}/>
+                                </div>
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label>Select Vehicle Type:</label>
-                            <div>
-                                <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
-                                    <option value=""></option>
-                                    {optionList}
-                                    <option value="other">Other - specify in comments</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label>Select Vehicle Year:</label>
-                            <div>
-                                <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
-                                    <option value=""></option>
-                                    <option value="2021">2021</option>
-                                </select>
+                            <div className="form-group">
+                                <label>Phone Number:</label>
+                                <div>
+                                    <input type="text" onChange={e => setPhone(e.target.value)}/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="ap-form-right">
-                        <div className="form-group">
-                            <label>Select Reason for Visit:</label>
-                            <div>
-                                <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
-                                    <option value=""></option>
-                                    <option value="Oil Change">Oil Change</option>
-                                </select> 
+                    <label className="form-heading">Appointment Time:</label>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Select Date:</label>
+                                <div>
+                                    <input type="date" onChange={e => setDate(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Select Time:</label>
+                                <div>
+                                    <input type="time" onChange={e => setTime(e.target.value)}/>
+                                </div>
                             </div>
                         </div>
-                        <div className="form-group">
-                            <label>Additional Comments:</label>
-                            <div>
-                                <textarea onChange={e => setTime(e.target.value)} col="50" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                    </div>
+                    <label className="form-heading">Vehicle Info:</label>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Make:</label>
+                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                            </div>
+                            <div className="form-group">
+                                <label>Model:</label>
+                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                            </div>
+                            <div className="form-group">
+                                <label> Year:</label>
+                                <input type="number" onChange={e => setPhone(e.target.value)}/>
+                            </div>
+                        </div>
+                    </div>
+                    <label className="form-heading">Helpful Info:</label>
+                    <div className="form-section">
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Reason for Visit:</label>
+                                <div>
+                                    <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
+                                        <option value=""></option>
+                                        <option value="Oil Change">Oil Change</option>
+                                    </select> 
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Additional Comments:</label>
+                                <div>
+                                    <textarea onChange={e => setTime(e.target.value)} col="50" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="confirm-group">
-                    <label>Confirm Appointment:</label>
-                    <div>
-                        <p>You have selected:</p>
-                        <p>This time</p>
-                        <p>on</p>
-                        <p>This date</p>
-                    </div>
+                <div>
                     <div className="confirm-group">
-                        <label>First Name:</label>
-                        <input type="text" onChange={e => setFirstName(e.target.value)}/>
+                        <label>Confirm Appointment:</label>
+                        <div>
+                            <p>You have selected:</p>
+                            <p>This time</p>
+                            <p>on</p>
+                            <p>This date</p>
+                        </div>
                     </div>
-                    <div className="confirm-group">
-                        <label>Last Name:</label>
-                        <input type="text" onChange={e => setLastName(e.target.value)}/>
-                    </div>
-                    <div className="confirm-group">
-                        <label>Email:</label>
-                        <input type="email" onChange={e => setEmail(e.target.value)}/>
-                    </div>
-                    <div className="confirm-group">
-                        <label>Phone Number:</label>
-                        <input type="text" onChange={e => setPhone(e.target.value)}/>
-                    </div>
-
                     <input type="submit" value="Schedule"/>
                 </div>
             </form>
