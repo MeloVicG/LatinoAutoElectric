@@ -29,17 +29,17 @@ const HomePage = () => {
 
                     <div className="homeMidBox">
                         <div >
-                            <p className="homeMidP"> Gallery </p>
+                            <Link to="/about"> <p className="homeMidP"> Gallery </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div >
-                            <p className="homeMidP">Service</p>
+                            <Link to="/services"> <p className="homeMidP">Service</p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div >
-                            <p className="homeMidP"> Customer Reviews </p>
+                            <Link to="/reviews"><p className="homeMidP"> Customer Reviews </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
@@ -50,8 +50,8 @@ const HomePage = () => {
                     <p>"Latinos Auto Electric has been taking care of my cars for over 20 years. They continue to do an amazing job and I will always choose them to take care of any auto issues I have."</p>
                 </div>
                 <div className="location-box">
-                    <img className="img3" src={mapPlaceholder} alt="map" />
-                    <div className="location-box-text">
+                    <img style={{borderLeft:"black 1px solid", borderTop:"black 1px solid", borderBottom:"black 1px solid"}} className="img3" src={mapPlaceholder} alt="map" />
+                    <div style={{borderRight:"black 1px solid", borderTop:"black 1px solid", borderBottom:"black 1px solid"}}className="location-box-text">
                         <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
                         <div>
                         <br/>
