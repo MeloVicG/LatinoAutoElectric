@@ -10,7 +10,6 @@ const HomePage = () => {
 
     return (
         <div className="App">
-            <h1>*************************************</h1>
             <div className="wrapper">
                 <h1 className="titleBox">Latinos Auto Electric</h1>
 
@@ -53,20 +52,20 @@ const HomePage = () => {
                 <div className="location-box">
                     <img className="img3" src={mapPlaceholder} alt="map" />
                     <div className="location-box-text">
-                        <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at: 123 Auto Blvd, Los Angeles, CA 11111</p>
-                        <Link to="/directions">Get Directions</Link>
-                    </div>
-                </div>
-
-                <footer style={{ backgroundColor: "rgb(18,151,210)" }}>
-                    <div>
-                        <p>Latinos Auto Electric</p>
-                        <p>Contact:</p>
+                        <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
+                        <div>
+                        <br/>
                         <p>427 E Anaheim st</p>
                         <p>Long Beach, CA</p>
                         <p>90813</p>
                         <p>562-218-8560</p>
                     </div>
+                        <Link to="/directions">Get Directions</Link>
+                    </div>
+                </div>
+
+                <footer style={{ backgroundColor: "#00b0f4" }}>
+                    
                     <div style={{ margin: "30px" }}>
                         <a href="">something</a>
                         <a href="">something</a>
