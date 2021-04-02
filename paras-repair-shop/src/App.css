@@ -4,9 +4,9 @@
   padding: 0px;
 }
 
-.App * {
+/* .App * {
   border: red dotted 2px;
-}
+} */
 
 .wrapper {
   /* margin-top: 50px; */
@@ -16,6 +16,7 @@
   height: 1700px;
   width: 100%;
   background: url("https://wallpaperaccess.com/full/2056565.jpg");
+  /* background-color: rgb(202,202,202); */
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -25,39 +26,35 @@
 }
 
 .titleBox {
-  background-color: white;
+  background-color: rgb(18,151,210);
+  box-shadow: 0px 1px 10px 5px;
   margin: auto;
-  opacity: 50%;
-
+  margin-bottom: 20px;
   width: 50%;
+  font-size: 60px;
 }
 
-nav {
-  margin: auto;
-  width: 90%;
-  padding: 10px;
-  box-shadow: 10px 10px;
-  /* border: rgb(40,44,52); */
-  /* margin-bottom: 50px; */
-}
+  nav {
+    margin: auto;
+    /* width: 90%; */
+    padding: 10px;
+    box-shadow: 10px 10px 20px 10px;
+    border-top:black 2px solid;
+    border-bottom:black 2px solid;
+    /* border: rgb(40,44,52); */
+    /* margin-bottom: 50px; */
+  }
 
-.image1 {
-  margin-top: 50px;
-  width: 50.5%;
-  height: auto;
-  /* background-color: white; */
-}
+  nav a {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 25px;
+  }
 
-.image2 {
-  width: 21%;
-}
+  navBarHome {
+    margin-left: 100px;
+  }
 
-.homeMiddleSection {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
-  /* margin: 0px 50px */
-}
 
 .ap-form-top {
   display: flex;
@@ -70,5 +67,6 @@ nav {
   justify-content: center;
   align-content: space-between;
 }
+
 
 /* Updated */
