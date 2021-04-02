@@ -10,7 +10,7 @@ const HomePage = () => {
 
     return(
         <div className="App">
-
+            <h1>*************************************</h1>
             <div className="wrapper">
                 <h1 className="titleBox">Latinos Auto Electric</h1>
 
