@@ -1,0 +1,60 @@
+.titleBox2 {
+  margin: auto;
+  width: 50%;
+  font-size: 70px;
+  font-style: italic;
+  font-weight: bolder;
+  color: black;
+}
+
+.banner {
+  padding: 10px;
+  border: 2px solid black;
+  margin: 5%;
+}
+
+.banner h1 {
+  font-family: "Brush Script MT";
+  font-weight: bold;
+  font-size: xx-large;
+  padding-left: 0.5px;
+  padding-right: 0.5px;
+  position: relative;
+  top: -50px;
+  width: 10%;
+  margin-bottom: -40px;
+  background-color: white;
+  z-index: 1;
+}
+
+.infoSection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  vertical-align: middle;
+}
+
+.infoSection img {
+  max-height: 300px;
+  margin: 2%;
+}
+
+.infoSection p {
+  width: 30%;
+  margin: 2%;
+  padding: 2%;
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #00b0f4;
+  box-shadow: 5px 5px;
+}
+
+.staffBox {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

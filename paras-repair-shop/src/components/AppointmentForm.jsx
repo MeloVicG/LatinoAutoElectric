@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import styles from './AppointmentForm.module.css';
 
-const AppointmentForm = ({appointments, setAppointments}) => {
+const AppointmentForm = () => {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -23,33 +24,33 @@ const AppointmentForm = ({appointments, setAppointments}) => {
 
     return (
         <div>
-            <form className="appointmentForm" >
+            <form className={styles.appointmentForm} >
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
-                <div className="ap-form-top">
-                    <label className="form-heading">Contact Info:</label>
-                    <div className="form-section">
-                        <div className="form-row">
-                            <div className="form-group">
+                <div className={styles.apFormTop}>
+                    <label className={styles.formHeading}>Contact Info:</label>
+                    <div className={styles.formSection}>
+                        <div className={styles.formRow}>
+                            <div className={styles.formGroup}>
                                 <label>First Name:</label>
                                 <div>
                                     <input type="text" onChange={e => setFirstName(e.target.value)}/>
                                 </div>
                             </div>
-                            <div className="form-group">
+                            <div className={styles.formGroup}>
                                 <label>Last Name:</label>
                                 <div>
                                     <input type="text" onChange={e => setLastName(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
-                        <div className="form-row">
-                            <div className="form-group">
+                        <div className={styles.formRow}>
+                            <div className={styles.formGroup}>
                                 <label>Email:</label>
                                 <div>
                                     <input type="email" onChange={e => setEmail(e.target.value)}/>
                                 </div>
                             </div>
-                            <div className="form-group">
+                            <div className={styles.formGroup}>
                                 <label>Phone Number:</label>
                                 <div>
                                     <input type="text" onChange={e => setPhone(e.target.value)}/>
@@ -57,16 +58,16 @@ const AppointmentForm = ({appointments, setAppointments}) => {
                             </div>
                         </div>
                     </div>
-                    <label className="form-heading">Appointment Time:</label>
-                    <div className="form-section">
-                        <div className="form-row">
-                            <div className="form-group">
+                    <label className={styles.formHeading}>Appointment Time:</label>
+                    <div className={styles.formSection}>
+                        <div className={styles.formRow}>
+                            <div className={styles.formGroup}>
                                 <label>Select Date:</label>
                                 <div>
                                     <input type="date" onChange={e => setDate(e.target.value)}/>
                                 </div>
                             </div>
-                            <div className="form-group">
+                            <div className={styles.formGroup}>
                                 <label>Select Time:</label>
                                 <div>
                                     <input type="time" onChange={e => setTime(e.target.value)}/>
@@ -74,27 +75,27 @@ const AppointmentForm = ({appointments, setAppointments}) => {
                             </div>
                         </div>
                     </div>
-                    <label className="form-heading">Vehicle Info:</label>
-                    <div className="form-section">
-                        <div className="form-row">
-                            <div className="form-group">
+                    <label className={styles.formHeading}>Vehicle Info:</label>
+                    <div className={styles.formSection}>
+                        <div className={styles.formRow}>
+                            <div className={styles.formGroup}>
                                 <label>Make:</label>
                                 <input type="text" onChange={e => setPhone(e.target.value)}/>
                             </div>
-                            <div className="form-group">
+                            <div className={styles.formGroup}>
                                 <label>Model:</label>
                                 <input type="text" onChange={e => setPhone(e.target.value)}/>
                             </div>
-                            <div className="form-group">
+                            <div className={styles.formGroup}>
                                 <label> Year:</label>
                                 <input type="number" onChange={e => setPhone(e.target.value)}/>
                             </div>
                         </div>
                     </div>
-                    <label className="form-heading">Helpful Info:</label>
-                    <div className="form-section">
-                        <div className="form-row">
-                            <div className="form-group">
+                    <label className={styles.formHeading}>Helpful Info:</label>
+                    <div className={styles.formSection}>
+                        <div className={styles.formRow}>
+                            <div className={styles.formGroup}>
                                 <label>Reason for Visit:</label>
                                 <div>
                                     <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
@@ -103,7 +104,7 @@ const AppointmentForm = ({appointments, setAppointments}) => {
                                     </select> 
                                 </div>
                             </div>
-                            <div className="form-group">
+                            <div className={styles.formGroup}>
                                 <label>Additional Comments:</label>
                                 <div>
                                     <textarea onChange={e => setTime(e.target.value)} col="50" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
@@ -113,7 +114,7 @@ const AppointmentForm = ({appointments, setAppointments}) => {
                     </div>
                 </div>
                 <div>
-                    <div className="confirm-group">
+                    <div className={styles.confirmGroup}>
                         <label>Confirm Appointment:</label>
                         <div>
                             <p>You have selected:</p>

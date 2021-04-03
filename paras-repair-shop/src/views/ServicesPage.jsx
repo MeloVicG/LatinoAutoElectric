@@ -1,15 +1,16 @@
-import React, {useEffect} from 'react';
+import React, { Static } from 'react';
 import NavBar from '../components/NavBar';
+import styles from './ServicesPage.module.css';
 
 const ServicesPage = () => {
 
     return (
         <div>
-            <h1 className="titleBox-2">Latinos Auto Electric</h1>
+            <h1 className={styles.titleBox2} >Latinos Auto Electric</h1>
             <NavBar/>
-            <div className="banner">
+            <div className={styles.banner}>
                 <h1>Services</h1>
-                <div className="categories">
+                <div className={styles.categories}>
                     <div>
                         <h3>Maintenance</h3>
                         <ul>
@@ -41,6 +42,9 @@ const ServicesPage = () => {
                             <li></li>
                         </ul>
                     </div>
+                </div>
+                <div className={styles.serviceMidBox}>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aliquid praesentium atque nisi suscipit corrupti sapiente quod iure, enim vero et quia repellat, nemo at. Eos culpa maiores illum architecto!</p>
                 </div>
             </div>
             <h4>Contact us here with any questions or to schedule over the phone.</h4>
