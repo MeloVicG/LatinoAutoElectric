@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
 import AppointmentForm from '../components/AppointmentForm';
+import styles from './AppointmentPage.module.css';
 import NavBar from '../components/NavBar';
 
 const AppointmentPage = () => {
 
     return (
         <div className="wrapper">
-            <h1 className="titleBox-2">Latinos Auto Electric</h1>
+            <h1 className="titleBox2">Latinos Auto Electric</h1>
             <NavBar/>
-            <div className="banner">
+            <div className={styles.banner2}>
                 <h1>Appointment</h1>
                 <AppointmentForm />
             </div>

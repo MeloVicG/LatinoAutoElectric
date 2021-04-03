@@ -1,0 +1,19 @@
+.banner2 {
+  padding: 10px;
+  border: 2px solid #00b0f4;
+  margin: 5%;
+}
+
+.banner2 h1 {
+  font-family: "Brush Script MT";
+  font-weight: bold;
+  font-size: xx-large;
+  padding-left: 0.5px;
+  padding-right: 0.5px;
+  position: relative;
+  top: -50px;
+  width: 12%;
+  margin-bottom: -40px;
+  background-color: #00b0f4;
+  z-index: 1;
+}
