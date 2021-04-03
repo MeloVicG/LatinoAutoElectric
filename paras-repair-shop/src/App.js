@@ -8,6 +8,7 @@ import AboutPage from './views/AboutPage';
 import ServicesPage from './views/ServicesPage';
 import LocationPage from './views/LocationPage';
 import ContactPage from './views/ContactPage';
+import ReviewPage from './views/ReviewPage';
 
 
 function App() {
@@ -15,12 +16,12 @@ function App() {
     <div className="App">
       <Router>
         <HomePage path="/" />
-        <ServicePage path="/service" />
         <AppointmentPage path="/schedule" />
         <AboutPage path="/about" />
         <ServicesPage path="/services" />
         <LocationPage path="/directions" />
         <ContactPage path="/contact" />
+        <ReviewPage path="/reviews" />
       </Router>
     </div>
   );
