@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Router } from '@reach/router';
-import HomePage from './views/HomePage'
-import ServicePage from './views/ServicePage'
+import HomePage from './views/HomePage';
 import AppointmentPage from './views/AppointmentPage';
 import AboutPage from './views/AboutPage';
 import ServicesPage from './views/ServicesPage';

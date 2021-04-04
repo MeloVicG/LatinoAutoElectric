@@ -1,0 +1,65 @@
+.banner {
+  padding: 10px;
+  border: 2px solid white;
+  margin: 5%;
+}
+
+.banner h1 {
+  font-family: "Brush Script MT";
+  font-weight: bold;
+  font-size: xx-large;
+  padding-left: 0.5px;
+  padding-right: 0.5px;
+  position: relative;
+  top: -50px;
+  width: 10%;
+  margin-bottom: -40px;
+  background-color: white;
+  z-index: 1;
+}
+
+.apFormTop {
+  display: block;
+}
+
+.formHeading {
+  display: flex;
+  font-size: x-large;
+  justify-content: center;
+  background-color: #00b0f4;
+  box-shadow: 5px 5px;
+  margin: 0% 5% 0.3% 5%;
+}
+
+.formSection {
+  width: 90%;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #f0f0f0;
+}
+
+.formRow {
+  width: 70%;
+  justify-content: center;
+  text-align: left;
+  margin: 0.5%;
+  font-size: larger;
+}
+
+.formGroup {
+  display: inline-flex;
+  justify-content: space-around;
+  align-self: center;
+  width: 50%;
+  margin: 1%;
+}
+
+.confirmGroup {
+  justify-content: center;
+  margin: 5% 25% 5% 25%;
+  background-color: #00b0f4;
+  box-shadow: 5px 5px;
+  font-size: 18px;
+  font-weight: bold;
+}

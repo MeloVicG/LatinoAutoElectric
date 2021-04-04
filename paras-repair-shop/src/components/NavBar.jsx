@@ -4,8 +4,8 @@ import { Link } from '@reach/router';
 const NavBar = ({appointments, setAppointments}) => {
 
     return (
-        <div className="nav-bar-parent">
-            <nav className="nav-bar">
+        <div className="navBarParent">
+            <nav className="navBar">
                 <Link to="/" style={{textDecoration:"none"}}>Home</Link> 
                 <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link> 
                 <Link to="/services" style={{textDecoration:"none"}}>Services</Link>  
