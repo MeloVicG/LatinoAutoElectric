@@ -73,10 +73,13 @@
 } */
 
 .navBar a {
+
   color: black;
   font-size: 20px;
+  padding: 5px;
   font-weight: bold;
   margin: 25px;
+
   &:hover {
     // color: darkblue;
     font-style: italic;

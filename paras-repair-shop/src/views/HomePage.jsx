@@ -4,6 +4,8 @@ import styles from '../styles/HomePage.module.scss';
 
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
+import Carousel from '../components/Carousel';
+
 import Footer from '../components/Footer'
 
 
@@ -20,6 +22,7 @@ const HomePage = () => {
                         <div className={styles.homeTopSection}>
                             <img className={styles.image1} src="https://www.wardsauto.com/sites/wardsauto.com/files/styles/article_featured_retina/public/uploads/2017/03/ford-focus-michigan-assembly-plant.jpg?itok=da7Zvhu9" alt="first image" />
                             <img className={styles.image2} src="https://i.pinimg.com/originals/c1/9f/a5/c19fa5a2b6de80d4b5e8866f2cf36c0f.jpg" alt="second" />
+                            {/* <Carousel /> */}
                         </div>
                     </div>
                     <div className={styles.quote}>
