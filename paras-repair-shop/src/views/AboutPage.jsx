@@ -3,6 +3,12 @@ import NavBar from '../components/NavBar';
 import styles from '../styles/AboutPage.module.scss';
 import camaro from '../static/images/camaro.jpg';
 import mustang from '../static/images/ev-mustang.jpg';
+import Footer from  '../components/Footer'
+
+import owner from '../static/images/repairGuy.jpg'
+import mechanic from '../static/images/wrenchGuy.jpg'
+import specialist from '../static/images/salesMan.jpg'
+
 
 const AboutPage = () => {
 
@@ -26,21 +32,36 @@ const AboutPage = () => {
                 <p>We also can perform maintenance on all modern vehicles and can handle any maintenance and repairs to ensure your and your families safety.</p>
                 <img src={mustang} alt="modern car"/>
             </div>
-            <div>
+
+            <div className={styles.botBox}>
                 <h1>Meet our Staff</h1>
-                <div class={styles.staffBox}>
-                    <div>
+                <div className={styles.staffBox}>
+                    <div className={styles.staff}>
                         <h3>Owner</h3>
+                        <img src={owner} alt="manager"/>
+                        <p>Jose is the proud owner of Latino Auto Electric.
+                            His family has been in the business for more than Xx years. 
+                            He is more than happy to be of assistance to his community, 
+                            fixing what needs to be fixed to get you back on the road
+                        </p>
                     </div>
-                    <div>
+                    <div className={styles.staff}>
                         <h3>Head Mechanic</h3>
+                        <img src={mechanic} alt="head mechanic"/>
+                        <p>Jacob is a long time friend of Jose and the community. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quam delectus maxime alias iusto autem veritatis exercitationem corrupti, porro in sunt nulla unde natus, explicabo mollitia atque commodi. In, magni.
+                        </p>
                     </div>
-                    <div>
+                    <div className={styles.staff}>
                         <h3>Repair Specialist</h3>
+                        <img src={specialist} alt="specialist"/>
+                        <p>just some random hire guy
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum eos unde ducimus a adipisci ab odit. Possimus cumque dolores fuga, necessitatibus velit ducimus facilis dicta cum optio ratione expedita ipsa.
+                        </p>
                     </div>
                 </div>
             </div>
-            <h4>Contact us here with any questions or to schedule over the phone.</h4>
+            <Footer/>
         </div>
 
     )

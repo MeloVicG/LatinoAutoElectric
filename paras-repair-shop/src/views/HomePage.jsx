@@ -44,7 +44,7 @@ const HomePage = () => {
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div >
-                            <Link to="/reviews"><p className={styles.homeMidP}> Customer Reviews </p> </Link>
+                            <Link to="/reviews"><p className={styles.homeMidP}> Reviews </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
