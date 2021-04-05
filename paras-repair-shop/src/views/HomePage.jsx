@@ -4,7 +4,7 @@ import styles from '../styles/HomePage.module.scss';
 
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-
+import Footer from '../components/Footer'
 
 
 const HomePage = () => {

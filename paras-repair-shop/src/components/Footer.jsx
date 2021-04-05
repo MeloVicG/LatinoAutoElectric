@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 import facebook from '../static/images/facebook.png'
 import instagram from '../static/images/instagram.png'
 

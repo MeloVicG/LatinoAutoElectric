@@ -1,5 +1,5 @@
 import NavBar from '../components/NavBar'
-import styles from './FaqPage.module.css'
+import styles from '../styles/FaqPage.module.scss'
 
 const AboutPage = () => {
     return (
