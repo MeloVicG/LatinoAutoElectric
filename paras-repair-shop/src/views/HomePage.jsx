@@ -16,7 +16,7 @@ const HomePage = () => {
 
 
                 {/* has css */}
-                {/* <CarLogo /> */}
+                <CarLogo />
                 <NavBar />
                 <div className={styles.container}>
                     <div className={styles.containerTop}>
