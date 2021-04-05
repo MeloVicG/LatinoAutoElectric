@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+// import React, {useEffect} from 'react';
 import NavBar from '../components/NavBar';
 import styles from './AboutPage.module.css';
 import camaro from '../static/images/camaro.jpg';
