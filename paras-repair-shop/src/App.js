@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { Router } from '@reach/router';
 import HomePage from './views/HomePage';
 import AppointmentPage from './views/AppointmentPage';

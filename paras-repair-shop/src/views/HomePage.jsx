@@ -1,10 +1,10 @@
 import { Link } from '@reach/router';
 import { useEffect } from 'react';
-import styles from './HomePage.module.css';
+import styles from '../styles/HomePage.module.scss';
 
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-import CarLogo from '../components/CarLogo'
+import CarLogo from '../components/CarLogo';
 
 
 const HomePage = () => {

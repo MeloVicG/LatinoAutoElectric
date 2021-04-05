@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import AppointmentForm from '../components/AppointmentForm';
-import styles from './AppointmentPage.module.css';
+import styles from '../styles/AppointmentPage.module.scss';
 import NavBar from '../components/NavBar';
 
 const AppointmentPage = () => {

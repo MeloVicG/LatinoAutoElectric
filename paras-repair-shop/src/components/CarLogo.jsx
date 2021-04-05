@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import logo from '../static/images/hand-draw-logo.png';
-import styles from './CarLogo.module.css';
+import styles from '../styles/CarLogo.module.scss';
 
 const CarLogo = () => {
 

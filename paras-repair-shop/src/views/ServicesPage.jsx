@@ -1,6 +1,6 @@
 import React, { Static } from 'react';
 import NavBar from '../components/NavBar';
-import styles from './ServicesPage.module.css';
+import styles from '../styles/ServicesPage.module.scss';
 
 const ServicesPage = () => {
 
