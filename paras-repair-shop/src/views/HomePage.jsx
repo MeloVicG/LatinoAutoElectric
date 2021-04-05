@@ -4,8 +4,9 @@ import styles from '../styles/HomePage.module.scss';
 
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-import CarLogo from '../components/CarLogo';
 import Carousel from '../components/Carousel';
+
+import Footer from '../components/Footer'
 
 
 const HomePage = () => {
@@ -14,10 +15,7 @@ const HomePage = () => {
         <div className={styles.App}>
             <div className={styles.wrapper}>
                 <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
-
-
                 {/* has css */}
-                {/* <CarLogo /> */}
                 <NavBar />
                 <div className={styles.container}>
                     <div className={styles.containerTop}>
@@ -54,8 +52,8 @@ const HomePage = () => {
 
                 </div>
                 <div className={styles.locationBox}>
-                    <img style={{width:"50%", borderLeft:"black 1px solid", borderTop:"black 1px solid", borderBottom:"black 1px solid"}} className="img3" src={mapPlaceholder} alt="map" />
-                    <div style={{borderRight:"black 1px solid", borderTop:"black 1px solid", borderBottom:"black 1px solid"}}className="locationBoxText">
+                    <img style={{width:"50%"}} className="img3" src={mapPlaceholder} alt="map" />
+                    <div style={{ marginLeft:"100px"}}className="locationBoxText">
                         <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
                         <div>
                         <br/>
@@ -68,33 +66,8 @@ const HomePage = () => {
                     </div>
                 </div>
 
-                <footer style={{ backgroundColor: "#00b0f4" }}>
-                    
-                    <div style={{ margin: "30px" }}>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                    </div>
-                    <div style={{ margin: "30px" }}>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                    </div>
-                    <div style={{ margin: "30px" }}>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                    </div>
-                    <div style={{ margin: "30px" }}>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                        <a href="">something</a>
-                    </div>
-                </footer>
+                <Footer />
+                
             </div>
         </div>
     )

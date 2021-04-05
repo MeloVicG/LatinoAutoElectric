@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from '@reach/router';
+// import CarLogo from '../components/CarLogo'
 
-const NavBar = ({appointments, setAppointments}) => {
+const NavBar = () => {
 
     return (
         <div className="navBarParent">
             <nav className="navBar">
+                {/* <CarLogo />  */}
                 <Link to="/" style={{textDecoration:"none"}}>Home</Link> 
                 <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link> 
                 <Link to="/services" style={{textDecoration:"none"}}>Services</Link>  
