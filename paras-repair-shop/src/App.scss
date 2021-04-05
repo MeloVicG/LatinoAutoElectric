@@ -70,13 +70,18 @@
   }
 } */
 
-nav a {
+.navBar a {
   font-size: 20px;
+  padding: 5px;
   font-weight: bold;
   margin: 25px;
-}
-.navBar a {
   color: black;
+  &:hover {
+    // color: darkblue;
+    font-style: italic;
+    background: #00b0f4;
+    box-shadow: 0px 1px 10px 5px;
+  }
 }
 
 .navBarHome {
