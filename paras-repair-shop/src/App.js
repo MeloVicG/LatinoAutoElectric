@@ -8,6 +8,7 @@ import ServicesPage from './views/ServicesPage';
 import LocationPage from './views/LocationPage';
 import ContactPage from './views/ContactPage';
 import ReviewPage from './views/ReviewPage';
+import FaqPage from './views/FaqPage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <LocationPage path="/directions" />
         <ContactPage path="/contact" />
         <ReviewPage path="/reviews" />
+        <FaqPage path="/faq" />
       </Router>
     </div>
   );
