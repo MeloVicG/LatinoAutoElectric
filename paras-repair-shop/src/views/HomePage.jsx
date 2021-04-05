@@ -4,6 +4,7 @@ import styles from './HomePage.module.css';
 
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
+import CarLogo from '../components/CarLogo'
 
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
 
 
                 {/* has css */}
+                {/* <CarLogo /> */}
                 <NavBar />
                 <div className={styles.container}>
                     <div className={styles.containerTop}>

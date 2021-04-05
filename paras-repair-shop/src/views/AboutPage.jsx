@@ -7,7 +7,7 @@ import mustang from '../static/images/ev-mustang.jpg';
 const AboutPage = () => {
 
     return (
-        <div>
+        <div className="wrapper">
             <h1 className={styles.titleBox2}>Latinos Auto Electric</h1>
             <NavBar/>
             <div className={styles.banner}>
