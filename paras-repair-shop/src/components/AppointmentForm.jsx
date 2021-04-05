@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './AppointmentForm.module.css';
+import styles from '../styles/AppointmentForm.module.scss';
 
 const AppointmentForm = () => {
 

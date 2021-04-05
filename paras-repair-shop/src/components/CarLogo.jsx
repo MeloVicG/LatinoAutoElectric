@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import styles from './CarLogo.module.css';
+import logo from '../static/images/hand-draw-logo.png';
+import styles from '../styles/CarLogo.module.scss';
 
 const CarLogo = () => {
 
     return (
         <div>
-            <img className={styles.carLogo} alt="car logo"/>
+            <img className={styles.carLogo} src={logo} alt="car logo"/>
         </div>
-
     )
 }
 

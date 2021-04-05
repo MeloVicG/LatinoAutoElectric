@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import NavBar from '../components/NavBar';
-import styles from './AboutPage.module.css';
+import styles from '../styles/AboutPage.module.scss';
 import camaro from '../static/images/camaro.jpg';
 import mustang from '../static/images/ev-mustang.jpg';
 
