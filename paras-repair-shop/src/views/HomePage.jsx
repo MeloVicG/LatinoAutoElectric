@@ -1,11 +1,10 @@
 import { Link } from '@reach/router';
 import { useEffect } from 'react';
-import styles from './HomePage.module.css';
+import styles from '../styles/HomePage.module.scss';
 
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-// import CarLogo from '../components/CarLogo'
-import Footer from '../components/Footer'
+
 
 
 const HomePage = () => {
@@ -15,7 +14,6 @@ const HomePage = () => {
             <div className={styles.wrapper}>
                 <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
                 {/* has css */}
-                {/* <CarLogo /> */}
                 <NavBar />
                 <div className={styles.container}>
                     <div className={styles.containerTop}>

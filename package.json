@@ -16,5 +16,8 @@
     "express": "^4.17.1",
     "jquery": "^3.6.0",
     "mongoose": "^5.12.2"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
   }
 }
