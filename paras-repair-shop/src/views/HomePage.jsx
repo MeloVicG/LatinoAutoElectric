@@ -1,11 +1,9 @@
 import { Link } from '@reach/router';
 import { useEffect } from 'react';
 import styles from '../styles/HomePage.module.scss';
-
+import SliderCarousel from '../components/SliderCarousel';
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-import Carousel from '../components/Carousel';
-
 import Footer from '../components/Footer'
 
 
@@ -20,9 +18,9 @@ const HomePage = () => {
                 <div className={styles.container}>
                     <div className={styles.containerTop}>
                         <div className={styles.homeTopSection}>
-                            <img className={styles.image1} src="https://www.wardsauto.com/sites/wardsauto.com/files/styles/article_featured_retina/public/uploads/2017/03/ford-focus-michigan-assembly-plant.jpg?itok=da7Zvhu9" alt="first image" />
-                            <img className={styles.image2} src="https://i.pinimg.com/originals/c1/9f/a5/c19fa5a2b6de80d4b5e8866f2cf36c0f.jpg" alt="second" />
-                            {/* <Carousel /> */}
+                            {/* <img className={styles.image1} src="https://www.wardsauto.com/sites/wardsauto.com/files/styles/article_featured_retina/public/uploads/2017/03/ford-focus-michigan-assembly-plant.jpg?itok=da7Zvhu9" alt="first image" />
+                            <img className={styles.image2} src="https://i.pinimg.com/originals/c1/9f/a5/c19fa5a2b6de80d4b5e8866f2cf36c0f.jpg" alt="second" /> */}
+                            <SliderCarousel />
                         </div>
                     </div>
                     <div className={styles.quote}>

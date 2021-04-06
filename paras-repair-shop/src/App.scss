@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 .App {
   text-align: center;
   margin: 0px;
@@ -62,7 +63,6 @@
   /* vertical-align: middle; */
   /* border: rgb(40,44,52); */
   /* margin-bottom: 50px; */
-  
 }
 
 /* @media (min-height: 300px) {
@@ -73,7 +73,6 @@
 } */
 
 .navBar a {
-
   color: black;
   font-size: 20px;
   padding: 5px;
