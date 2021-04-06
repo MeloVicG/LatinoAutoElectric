@@ -14,7 +14,7 @@ const AboutPage = () => {
 
     return (
         <div className="wrapper">
-            <h1 className={styles.titleBox2}>Latinos Auto Electric</h1>
+            <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
             <NavBar/>
             <div className={styles.banner}>
                 <h1>About Us</h1>

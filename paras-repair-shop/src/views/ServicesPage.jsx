@@ -1,12 +1,14 @@
 import React, { Static } from 'react';
 import NavBar from '../components/NavBar';
 import styles from '../styles/ServicesPage.module.scss';
+import Footer from '../components/Footer';
+
 
 const ServicesPage = () => {
 
     return (
         <div className="wrapper">
-            <h1 className={styles.titleBox2} >Latinos Auto Electric</h1>
+            <h1 className={styles.titleBox} >Latinos Auto Electric</h1>
             <NavBar/>
             <div className={styles.banner}>
                 <h1>Services</h1>
@@ -47,7 +49,7 @@ const ServicesPage = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aliquid praesentium atque nisi suscipit corrupti sapiente quod iure, enim vero et quia repellat, nemo at. Eos culpa maiores illum architecto!</p>
                 </div>
             </div>
-            <h4 className={styles.footNote}>Contact us here with any questions or to schedule over the phone.</h4>
+                <Footer></Footer>
         </div>
 
     )
