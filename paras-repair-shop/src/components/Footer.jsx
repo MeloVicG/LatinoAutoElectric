@@ -12,7 +12,7 @@ const Footer = () => {
                 <div>
                     <p>made by:</p>
                         <p>Victor Gargurevich</p>
-                        <p>Spence Hyuck</p>
+                        <p>Spence Huyck</p>
                 </div>
                 <div>
                     made with:

@@ -25,7 +25,7 @@ const SliderCarousel = () => {
                     <img
                     key="1"
                     className="d-block w-100 p-5"
-                    height="700px"
+                    height="500px"
                     src={engine}
                     alt="Unavailable"
                     />

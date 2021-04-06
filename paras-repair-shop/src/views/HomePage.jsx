@@ -4,8 +4,7 @@ import styles from '../styles/HomePage.module.scss';
 import SliderCarousel from '../components/SliderCarousel';
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-import Footer from '../components/Footer'
-
+import Footer from '../components/Footer';
 
 const HomePage = () => {
 
@@ -50,7 +49,8 @@ const HomePage = () => {
 
                 </div>
                 <div className={styles.locationBox}>
-                    <img style={{width:"50%"}} className="img3" src={mapPlaceholder} alt="map" />
+                <iframe width="600" height="350" frameborder="0" style={{border:0}} src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCOtx7HHjvK-8gn-0OGNnnrs1HT9RGWGXI&q=Latinos+Auto+Electric+427+E+Anaheim+Street,Long+Beach,California&zoom=13" allowfullscreen>
+            </iframe>
                     <div style={{ marginLeft:"100px"}}className="locationBoxText">
                         <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
                         <div>
