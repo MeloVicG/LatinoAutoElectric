@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
-// import styles from '../styles/SliderCarousel.module.scss';
+
 import repair from '../static/images/vehicle_repair.jpg';
 import engine from '../static/images/engine2.jpg';
 import mustang from '../static/images/ev-mustang.jpg';
@@ -8,11 +7,6 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 const SliderCarousel = () => {
-    // const images = [
-    //     {image:require('../static/images/ev-mustang.jpg')},
-    //     {image:require('../static/images/engine2.jpg')},
-    //     {image:require('../static/images/engine2.jpg')}
-    // ]
     const [index, setIndex] = useState(0);
     const handleImage = (newIndex) => {
         setIndex(newIndex);
