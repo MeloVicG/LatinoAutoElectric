@@ -56,8 +56,32 @@
   box-shadow: 5px 5px;
 }
 
+img{
+  width:50%;
+  box-shadow: 0px 1px 10px 5px;
+  border: black solid 1px;
+}
+
 .staffBox {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+}
+
+.staff {
+  background-color: #f0f0f0;
+  margin: 50px;
+  border: black solid 1px;
+  box-shadow: 5px 5px;
+}
+
+.staff p {
+  margin: 50px;
+}
+
+.botBox h1{
+  border: black 1px solid;
+  margin: 0px 40%;
+  background-color: #00b0f4;
+  box-shadow: 5px 5px;
 }
