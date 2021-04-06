@@ -4,9 +4,9 @@ import styles from '../styles/HomePage.module.scss';
 import SliderCarousel from '../components/SliderCarousel';
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
-import Footer from '../components/Footer'
-import GoogleMap from '../components/GoogleMap'
-// import { Map, GoogleApiWrapper } from 'google-maps-react';
+
+import Footer from '../components/Footer';
+import GoogleMap from '../components/GoogleMap';
 
 
 const HomePage = () => {
@@ -52,8 +52,9 @@ const HomePage = () => {
 
                 </div>
                 <div className={styles.locationBox}>
+
                     {/* <img style={{width:"50%"}} className="img3" src={mapPlaceholder} alt="map" /> */}
-                    <GoogleMap></GoogleMap>
+                    <GoogleMap/>
                     <div style={{ marginLeft: "100px" }} className="locationBoxText">
                         <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
                         <div>

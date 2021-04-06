@@ -115,7 +115,7 @@ const AppointmentForm = () => {
                 </div>
                 <div>
                     <div className={styles.confirmGroup}>
-                        <label>Confirm Appointment:</label>
+                        <label className={styles.confirmLabel}>Confirm Appointment:</label>
                         <div>
                             <p>You have selected:</p>
                             <p>This time</p>
@@ -123,7 +123,7 @@ const AppointmentForm = () => {
                             <p>This date</p>
                         </div>
                     </div>
-                    <input type="submit" value="Schedule"/>
+                    <input className={styles.submit} type="submit" value="Schedule"/>
                 </div>
             </form>
         </div>
