@@ -5,6 +5,8 @@ import SliderCarousel from '../components/SliderCarousel';
 import NavBar from '../components/NavBar';
 import mapPlaceholder from '../static/images/map-placeholder.PNG';
 import Footer from '../components/Footer'
+import GoogleMap from '../components/GoogleMap'
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 
 const HomePage = () => {
@@ -50,22 +52,25 @@ const HomePage = () => {
 
                 </div>
                 <div className={styles.locationBox}>
-                    <img style={{width:"50%"}} className="img3" src={mapPlaceholder} alt="map" />
-                    <div style={{ marginLeft:"100px"}}className="locationBoxText">
+                    {/* <img style={{width:"50%"}} className="img3" src={mapPlaceholder} alt="map" /> */}
+                    <GoogleMap></GoogleMap>
+                    <div style={{ marginLeft: "100px" }} className="locationBoxText">
                         <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
                         <div>
-                        <br/>
-                        <p>427 E Anaheim st</p>
-                        <p>Long Beach, CA</p>
-                        <p>90813</p>
-                        <p>562-218-8560</p>
-                    </div>
-                        <Link to="/directions">Get Directions</Link>
+                            <br />
+                            <p>427 E Anaheim st</p>
+                            <p>Long Beach, CA</p>
+                            <p>90813</p>
+                            <p>562-218-8560</p>
+                        </div>
+                        <a href="https://www.google.com/maps/dir//Latinos+Auto+Electric,+427+E+Anaheim+St,+Long+Beach,+CA+90813/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dd31436e825685:0x124c3088759240bd?sa=X&ved=2ahUKEwjg8rjo0urvAhXRop4KHW0WAqgQ48ADMAB6BAgHED0">
+                            Get Directions
+                        </a>
                     </div>
                 </div>
 
                 <Footer />
-                
+
             </div>
         </div>
     )
