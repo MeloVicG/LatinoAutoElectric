@@ -4,11 +4,15 @@
 }
 
 .faqBanner {
+    display: inline-flex;
+    justify-content: space-around;
+
     padding: 10px;
     border: 2px solid black;
     margin: 5%;
+    margin-bottom: 200px;
     background-color: #f0f0f0;
-    width:40%;
+    width: 70%;
     box-shadow: 5px 5px;
 }
 
@@ -17,7 +21,7 @@
     border: 2px solid black;
     margin: 5%;
     background-color: #f0f0f0;
-    width:40%;
+    width: 40%;
     box-shadow: 5px 5px;
 }
 
@@ -29,7 +33,7 @@
     // padding-right: 0.5px;
     position: relative;
     top: -50px;
-    width: 15%;
+    width: 30%;
     margin-bottom: -40px;
     background-color: #00b0f4;
     border: black solid 1px;
@@ -37,14 +41,14 @@
     box-shadow: 3px 3px;
 }
 
-
-
-.titleBox{
+.titleBox {
+    font-family: "Lobster", cursive;
     background-color: #00b0f4;
     box-shadow: 0px 1px 10px 5px;
     margin: auto;
     margin-bottom: 20px;
     width: 50%;
     font-size: 60px;
+    font-style: italic;
+    font-weight: bold;
 }
-
