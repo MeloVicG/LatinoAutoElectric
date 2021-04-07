@@ -2,7 +2,7 @@
   padding: 10px;
   border: 2px solid black;
   margin: 5%;
-  background-color:rgb(240,240,240) ;
+  background-color: rgb(240, 240, 240);
   box-shadow: 0px 1px 10px 5px;
 }
 
@@ -20,12 +20,16 @@
   z-index: 1;
   border: black 1px solid;
   box-shadow: 3px 3px;
-
 }
 
 .categories {
   display: flex;
   justify-content: space-around;
+}
+
+.categoryOptions {
+  list-style-type: none;
+  text-align: left;
 }
 
 .serviceMidBox {

@@ -1,11 +1,11 @@
 // import styles from '../styles/GoogleMap.module.scss';
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const MapContainer = () => {
 
     return (
         <iframe width="600" 
+            title="Location Map Frame"
             height="350" 
             frameborder="0"
             style={{border:0}} 
@@ -16,6 +16,3 @@ const MapContainer = () => {
 }
 
 export default MapContainer;
-// ({
-//     apiKey: 'AIzaSyCOtx7HHjvK-8gn-0OGNnnrs1HT9RGWGXI'
-// });

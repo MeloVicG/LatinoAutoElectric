@@ -15,7 +15,7 @@ const ServicesPage = () => {
                 <div className={styles.categories}>
                     <div>
                         <h3>Maintenance</h3>
-                        <ul>
+                        <ul className={styles.categoryOptions}>
                             <li>Battery Service</li>
                             <li>Break Service</li>
                             <li>Oil Change Service</li>
@@ -26,7 +26,7 @@ const ServicesPage = () => {
                     </div>
                     <div>
                         <h3>Repair</h3>
-                        <ul>
+                        <ul className={styles.categoryOptions}>
                             <li>Air Condition Repair</li>
                             <li>Belts and Hose Replacements</li>
                             <li>Collision Repair</li>
@@ -36,7 +36,7 @@ const ServicesPage = () => {
                     </div>
                     <div>
                         <h3>Custom</h3>
-                        <ul>
+                        <ul className={styles.categoryOptions}>
                             <li>Vintage Parts</li>
                             <li>Paint</li>
                             <li></li>
