@@ -11,7 +11,7 @@ const AppointmentPage = () => {
         <div className="wrapper">
             <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
             <NavBar/>
-            <div className={styles.banner2}>
+            <div className={styles.banner}>
                 <h1>Appointment</h1>
                 <AppointmentForm />
             </div>

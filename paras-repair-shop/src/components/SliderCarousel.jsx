@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 
-import repair from '../static/images/vehicle_repair.jpg';
-import engine from '../static/images/engine2.jpg';
-import mustang from '../static/images/ev-mustang.jpg';
+import repair from '../static/images/vehicle_repair2.jpg';
+import engine from '../static/images/engine3.jpg';
+import mustang from '../static/images/mustang2.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 
 
@@ -12,33 +12,45 @@ const SliderCarousel = () => {
         setIndex(newIndex);
     };
     return (
-        <Carousel activeIndex={index} onSelect={handleImage} className="w-70" height="400px">
-                <Carousel.Item className="w-100" height="400px">        
+        <Carousel activeIndex={index} onSelect={handleImage} className="w-60" height="800px">
+                <Carousel.Item >        
                     <img
                     key="0"
-                    className="d-block w-100 p-5"
+                    className="d-block w-100 p-5 border-0"
                     height="700px"
                     src={mustang}
                     alt="Unavailable"
                     />
+                    <div class="carousel-caption d-none d-lg-block text-white bg-dark">
+                        <h5>Custom Builds</h5>
+                        <p>Building and maintaining the highest quality vehicles.</p>
+                    </div>
                 </Carousel.Item>
-                <Carousel.Item className="w-100" height="400px">        
+                <Carousel.Item >        
                     <img
                     key="1"
-                    className="d-block w-100 p-5"
-                    height="500px"
+                    className="d-block w-100 p-5 border-0"
+                    height="700px"
                     src={engine}
                     alt="Unavailable"
                     />
+                    <div class="carousel-caption d-none d-lg-block text-white bg-dark">
+                        <h5>Services</h5>
+                        <p>Full service and maintenance.</p>
+                    </div>
                 </Carousel.Item>
-                <Carousel.Item className="w-100" height="400px">        
+                <Carousel.Item >        
                     <img
                     key="2"
-                    className="d-block w-100 p-5"
+                    className="d-block w-100 p-5 border-0"
                     height="700px"
                     src={repair}
                     alt="Unavailable"
                     />
+                    <div class="carousel-caption d-none d-lg-block text-white bg-dark">
+                        <h5>Repair</h5>
+                        <p>Available 7 days a week!</p>
+                    </div>
                 </Carousel.Item>
         </Carousel>
     )
