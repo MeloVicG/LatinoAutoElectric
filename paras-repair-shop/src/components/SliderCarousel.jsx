@@ -21,7 +21,7 @@ const SliderCarousel = () => {
                     src={mustang}
                     alt="Unavailable"
                     />
-                    <div class="carousel-caption d-none d-lg-block text-white bg-dark">
+                    <div class="carousel-caption d-none d-lg-block text-white bg-dark" style={{'z-index':"1"}}>
                         <h5>Custom Builds</h5>
                         <p>Building and maintaining the highest quality vehicles.</p>
                     </div>
@@ -34,7 +34,7 @@ const SliderCarousel = () => {
                     src={engine}
                     alt="Unavailable"
                     />
-                    <div class="carousel-caption d-none d-lg-block text-white bg-dark">
+                    <div class="carousel-caption d-none d-lg-block text-white bg-dark" style={{'z-index':"1"}}>
                         <h5>Services</h5>
                         <p>Full service and maintenance.</p>
                     </div>
@@ -47,7 +47,7 @@ const SliderCarousel = () => {
                     src={repair}
                     alt="Unavailable"
                     />
-                    <div class="carousel-caption d-none d-lg-block text-white bg-dark">
+                    <div class="carousel-caption d-none d-lg-block text-white bg-dark" style={{'z-index':"1"}}>
                         <h5>Repair</h5>
                         <p>Available 7 days a week!</p>
                     </div>
