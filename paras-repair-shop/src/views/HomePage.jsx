@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import styles from '../styles/HomePage.module.scss';
 import SliderCarousel from '../components/SliderCarousel';
 import NavBar from '../components/NavBar';
-import mapPlaceholder from '../static/images/map-placeholder.PNG';
-
 import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
 
@@ -27,7 +25,7 @@ const HomePage = () => {
                         <div className={styles.homeTopSection}>
                             {/* <img className={styles.image1} src="https://www.wardsauto.com/sites/wardsauto.com/files/styles/article_featured_retina/public/uploads/2017/03/ford-focus-michigan-assembly-plant.jpg?itok=da7Zvhu9" alt="first image" />
                             <img className={styles.image2} src="https://i.pinimg.com/originals/c1/9f/a5/c19fa5a2b6de80d4b5e8866f2cf36c0f.jpg" alt="second" /> */}
-                            <SliderCarousel />
+                            <SliderCarousel/>
                         </div>
                     </div>
                     <div className={styles.quote}>
@@ -38,19 +36,19 @@ const HomePage = () => {
                     </div>
 
                     <div className={styles.homeMidBox}>
-                        <div >
+                        <div className={styles.homeMidElement}>
                             <Link to="/about"> <p className={styles.homeMidP}> Gallery </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             <img src={Gallery} alt="gallery"/>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
-                        <div >
+                        <div className={styles.homeMidElement}>
                             <Link to="/services"> <p className={styles.homeMidP}>Service</p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             <img src={Services} alt="services"/>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
-                        <div >
+                        <div className={styles.homeMidElement}>
                             <Link to="/reviews"><p className={styles.homeMidP}> Reviews </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             <img src={Customer} alt="customer"/>
