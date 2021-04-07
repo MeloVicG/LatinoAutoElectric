@@ -8,6 +8,11 @@ import mapPlaceholder from '../static/images/map-placeholder.PNG';
 import Footer from '../components/Footer';
 import GoogleMap from '../components/GoogleMap';
 
+import Customer from '../static/images/satisfiedCustomer.jpg'
+import Gallery from '../static/images/vehicle_repair.jpg'
+import Services from '../static/images/repairService.jpg'
+
+
 
 const HomePage = () => {
 
@@ -36,16 +41,19 @@ const HomePage = () => {
                         <div >
                             <Link to="/about"> <p className={styles.homeMidP}> Gallery </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
+                            <img src={Gallery} alt="gallery"/>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div >
                             <Link to="/services"> <p className={styles.homeMidP}>Service</p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
+                            <img src={Services} alt="services"/>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div >
                             <Link to="/reviews"><p className={styles.homeMidP}> Reviews </p> </Link>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
+                            <img src={Customer} alt="customer"/>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                     </div>
