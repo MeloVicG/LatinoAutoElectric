@@ -1,19 +1,18 @@
-const dbConfig = require("../Configurations/db.config.js");
+
+const dbConfig = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
-    //why was this changed?
-    // operatorsAliases: false,
-    operatorsAliases: "0",
+    operatorsAliases: '0',
 
-    // pool: {
-    //     max: dbConfig.pool.max,
-    //     min: dbConfig.pool.min,
-    //     acquire: dbConfig.pool.acquire,
-    //     idle: dbConfig.pool.idle
-    // }
+    pool: {
+        max: dbConfig.pool.max,
+        min: dbConfig.pool.min,
+        acquire: dbConfig.pool.acquire,
+        idle: dbConfig.pool.idle
+    }
 });
 
 const db = {};
@@ -21,6 +20,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./appointment.model.js")(sequelize, Sequelize);
+db.appointments = require("./appointment.model.js")(sequelize, Sequelize);
 
 module.exports = db;

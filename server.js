@@ -1,14 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-// const PORT = 8001
+
+const db = require("./server/models");
+
 const app = express();
 
-//dont need body parser becaue express has its own after version 4.16+
-// const bodyParser = require("body-parser");
-
-
 var corsOptions = {
-    origin: "http://localhost:8001"
+    origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
@@ -40,6 +38,22 @@ app.get("/", (req, res) => {
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
+=======
+app.use(express.json());
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+db.sequelize.sync();
+
+require("./server/routes/appointment.routes")(app);
+// simple route
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to the LAE app." });
+});
+
+// set port, listen for requests
+const PORT = 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });

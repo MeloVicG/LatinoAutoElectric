@@ -9,7 +9,7 @@
   } */
 
 .titleBox {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   background-color: #00b0f4;
   box-shadow: 0px 1px 10px 5px;
   margin: auto;
@@ -95,17 +95,22 @@
 
 .homeMidElement {
   border: 1px black solid;
-  height: 200px;
+  height: 250px;
   margin: 0px 65px;
   padding: 20px;
   background-color: #00b0f4;
   box-shadow: 0px 1px 10px 5px;
   border-radius: 10px;
   transition: ease-in-out 3s;
+  overflow: hidden;
   &:hover {
     transition: ease-in-out 1s;
     height: 400px;
   }
+}
+
+.homeMidElement p {
+  margin-top: 30px;
 }
 
 .homeMidP {
