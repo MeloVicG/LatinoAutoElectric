@@ -126,7 +126,7 @@ exports.deleteAll = (req, res) => {
         truncate: false
     })
         .then(nums => {
-            res.send({ message: `${nums} Tutorials were deleted successfully!` });
+            res.send({ message: `${nums} Appointments were deleted successfully!` });
         })
         .catch(err => {
             res.status(500).send({

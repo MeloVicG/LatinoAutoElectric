@@ -16,7 +16,8 @@ module.exports = (sequelize, Sequelize) => {
             isEmail: true,
         },
         phone: {
-            type: Sequelize.INTEGER,
+            //change to string
+            type: Sequelize.BIGINT,
             // allowNull: false,
         },
         date: {
@@ -36,8 +37,11 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
         },
         year: {
-            type: Sequelize.DATEONLY,
+            type: Sequelize.STRING,
             allowNull: false,
+            isNumeric: true,
+            len: [9, 10],
+
         },
         serviceType: {
             type: Sequelize.TEXT,
