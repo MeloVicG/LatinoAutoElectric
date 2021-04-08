@@ -9,6 +9,9 @@ module.exports = app => {
     // Retrieve all Tutorials
     router.get("/", appointments.findAll);
 
+    // Retrieve all Appointments by selected date
+    router.get("/date/:id", appointments.findAllByDate);
+
     // Retrieve all published Tutorials
     router.get("/published", appointments.findAllPublished);
 
