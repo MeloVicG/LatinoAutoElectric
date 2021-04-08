@@ -89,7 +89,7 @@
 }
 
 .serviceCheckboxes {
-  display: block;
+  display: inline-flex;
   margin: 1%;
   height: auto;
   justify-content: space-evenly;
@@ -97,6 +97,7 @@
 
 .serviceType {
   border: 1px solid red;
+  display: block;
 }
 
 .confirmLabel {
