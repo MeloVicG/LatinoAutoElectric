@@ -9,6 +9,8 @@ import LocationPage from './views/LocationPage';
 import ContactPage from './views/ContactPage';
 import ReviewPage from './views/ReviewPage';
 import FaqPage from './views/FaqPage';
+import AdminLogin from './views/AdminLogin';
+import Dashboard from './views/Dashboard';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <ContactPage path="/contact" />
         <ReviewPage path="/reviews" />
         <FaqPage path="/faq" />
+        <AdminLogin path="/admin" />
+        <Dashboard path="/dashboard" />
       </Router>
     </div>
   );
