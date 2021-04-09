@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import { Router } from '@reach/router';
+import { useState } from 'react';
 import HomePage from './views/HomePage';
 import AppointmentPage from './views/AppointmentPage';
 import AboutPage from './views/AboutPage';
@@ -11,9 +12,16 @@ import ReviewPage from './views/ReviewPage';
 import FaqPage from './views/FaqPage';
 import AdminLogin from './views/AdminLogin';
 import Dashboard from './views/Dashboard';
+import DailyAppointmentsPage from './views/DailyAppointmentsPage';
+import AppointmentDetailsPage from './views/AppointmentDetailsPage';
+import ArchivePage from './views/ArchivePage';
 
 
 function App() {
+
+  const [appointments, setAppointments] = useState([]);
+  const [selectedDate, setSelectedDate] = useState([]);
+
   return (
     <div className="App">
       <Router>
@@ -26,7 +34,20 @@ function App() {
         <ReviewPage path="/reviews" />
         <FaqPage path="/faq" />
         <AdminLogin path="/admin" />
-        <Dashboard path="/dashboard" />
+        <Dashboard
+          path="/dashboard"
+          appointments={appointments}
+          setAppointments={setAppointments}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
+        <DailyAppointmentsPage
+          path="/daily-appointment"
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
+        <AppointmentDetailsPage path="/appointment-details" />
+        <ArchivePage path="/archive" />
       </Router>
     </div>
   );

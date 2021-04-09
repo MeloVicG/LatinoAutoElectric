@@ -1,4 +1,5 @@
-import React, {Link} from 'react';
+import React from 'react';
+import { Link } from '@reach/router';
 
 const AdminLogin = () => {
 
