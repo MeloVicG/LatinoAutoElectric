@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../styles/AppointmentForm.module.scss';
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
+
 
 const AppointmentForm = () => {
 
@@ -18,7 +21,7 @@ const AppointmentForm = () => {
 
     let vehicleList = ["Honda - Accord", "Honda - Civic", "Honda - CRV"];
     let optionList = [];
-    for(let i = 0; i < vehicleList.length; i++){
+    for (let i = 0; i < vehicleList.length; i++) {
         optionList.push(<option value={"vehicleList[i]"} key={i}>vehicleList[i]</option>);
     };
 
@@ -33,13 +36,13 @@ const AppointmentForm = () => {
                             <div className={styles.formGroup}>
                                 <label>First Name:</label>
                                 <div>
-                                    <input type="text" onChange={e => setFirstName(e.target.value)}/>
+                                    <input type="text" onChange={e => setFirstName(e.target.value)} />
                                 </div>
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Last Name:</label>
                                 <div>
-                                    <input type="text" onChange={e => setLastName(e.target.value)}/>
+                                    <input type="text" onChange={e => setLastName(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -47,55 +50,53 @@ const AppointmentForm = () => {
                             <div className={styles.formGroup}>
                                 <label>Email:</label>
                                 <div>
-                                    <input type="email" onChange={e => setEmail(e.target.value)}/>
+                                    <input type="email" onChange={e => setEmail(e.target.value)} />
                                 </div>
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Phone Number:</label>
                                 <div>
-                                    <input type="text" onChange={e => setPhone(e.target.value)}/>
+                                    <input type="text" onChange={e => setPhone(e.target.value)} />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <label className={styles.formHeading}>Appointment Time:</label>
                     <div className={styles.formSection}>
-                        <div className={styles.formRow}>
-                            <div className={styles.formGroup}>
+                        <div className={styles.formBalance}>
+                            <div >
                                 <label>Select Date:</label>
-                                <div>
-                                    <input type="date" onChange={e => setDate(e.target.value)}/>
-                                </div>
+                                <Calendar onChange={e => setDate(e.target.value)} />
                             </div>
-                            <div className={styles.formGroup}>
+                            <div>
                                 <label>Select Time:</label>
                                 <div>
-                                    <input type="time" onChange={e => setTime(e.target.value)}/>
+                                    <input type="time" onChange={e => setTime(e.target.value)} />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <label className={styles.formHeading}>Vehicle Info:</label>
                     <div className={styles.formSection}>
-                        <div className={styles.formRow}>
+                        <div className={styles.formBalance}>
                             <div className={styles.formGroup}>
                                 <label>Make:</label>
-                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                                <input type="text" onChange={e => setPhone(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Model:</label>
-                                <input type="text" onChange={e => setPhone(e.target.value)}/>
+                                <input type="text" onChange={e => setPhone(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
                                 <label> Year:</label>
-                                <input type="number" onChange={e => setPhone(e.target.value)}/>
+                                <input type="number" onChange={e => setPhone(e.target.value)} />
                             </div>
                         </div>
                     </div>
                     <label className={styles.formHeading}>Service Info:</label>
                     <div className={styles.formSection}>
                         <div className={styles.formRow}>
-                            <div className={styles.formGroup}>
+                            <div >
                                 <label>Reason for Visit:</label>
                                 <div className={styles.serviceCheckboxes}>
                                     <div className={styles.serviceType}>
@@ -103,36 +104,62 @@ const AppointmentForm = () => {
                                             <option value=""></option>
                                             <option value="Oil Change">Oil Change</option>
                                         </select>  */}
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />
-                                        <label for="vehicle3"> Oil Change </label>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />
-                                        <label for="vehicle3"> Oil Change </label>
+                                        <div>
+                                            <input type="checkbox" name="battery" value="battery" />
+                                            <label for="vehicle1"> Battery Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle2" value="Car" />
+                                            <label for="vehicle2"> Break Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle3" value="Boat" />
+                                            <label for="vehicle3"> Oil Change </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="battery" value="battery" />
+                                            <label for="vehicle1"> Battery Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle2" value="Car" />
+                                            <label for="vehicle2"> Break Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle3" value="Boat" />
+                                            <label for="vehicle3"> Oil Change </label>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />
-                                        <label for="vehicle3"> Oil Change </label>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
+                                    <div className={styles.serviceType}>
+                                        <div>
+                                            <input type="checkbox" name="battery" value="battery" />
+                                            <label for="vehicle1"> Battery Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle2" value="Car" />
+                                            <label for="vehicle2"> Break Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle3" value="Boat" />
+                                            <label for="vehicle3"> Oil Change </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="battery" value="battery" />
+                                            <label for="vehicle1"> Battery Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle2" value="Car" />
+                                            <label for="vehicle2"> Break Service </label>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
+                                    <div className={styles.serviceType}>
+                                        <div>
+                                            <input type="checkbox" name="battery" value="battery" />
+                                            <label for="vehicle1"> Battery Service </label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="vehicle2" value="Car" />
+                                            <label for="vehicle2"> Break Service </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +182,7 @@ const AppointmentForm = () => {
                             <p>This date</p>
                         </div>
                     </div>
-                    <input className={styles.submit} type="submit" value="Schedule"/>
+                    <input className={styles.submit} type="submit" value="Schedule" />
                 </div>
             </form>
         </div>

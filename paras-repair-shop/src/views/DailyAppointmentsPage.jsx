@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Display from "../components/Display";
 
-const DailyAppointmentsPage = ({ selectedDate, setSelectedDate }) => {
-
-    const [dailyAppointments, setDailyAppointments] = useState([]);
+const DailyAppointmentsPage = ({ selectedDate, setSelectedDate, dailyAppointments, setDailyAppointments }) => {
 
     useEffect(() => {
         axios.get("http://localhost:8080/api/appointments/date/" + selectedDate)

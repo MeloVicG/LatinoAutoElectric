@@ -1,50 +1,60 @@
 import { Link, navigate } from '@reach/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Display from '../components/Display'
+import Display from '../components/Display';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
-const Dashboard = () => {
+const Dashboard = ({ appointments, setAppointments, selectedDate, setSelectedDate, dailyAppointments, setDailyAppointments }) => {
 
-  const [appointments, setAppointments] = useState([]);
-  const [selectedDate, setSelectedDate] = useState([]);
+  const [validation, setValidation] = useState("");
+  const [userResults, setUserResults] = useState([]);
+  const [calDate, setCalDate] = useState(new Date());
+  const [filteredAppointments, setFilteredAppointments] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/appointments/")
       .then(res => {
         let allAppointments = res.data;
         setAppointments(allAppointments);
-        setSelectedDate([]);
       })
       .catch(err => {
         console.log(err);
       })
   }, []);
 
-  const handleDateSelection = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-    setSelectedDate(e.target.value);
-    findAppointments();
-  }
-
-  const findAppointments = () => {
-    console.log(selectedDate);
-    navigate("/daily-appointment");
-
-  }
-  const handleDateCheck = (e) => {
-    console.log("selected date: " + selectedDate);
+  const calendarChange = (calDate) => {
+    setCalDate(calDate);
+    let filtered = [];
+    appointments.map(appointment => {
+      const newCalDateFormat = calDate.toLocaleString().split(",")[0];
+      if (appointment.date === newCalDateFormat) {
+        filtered.push(appointment);
+      };
+    });
+    setFilteredAppointments(filtered);
   }
 
   return (
     <div>
       <h1>Calendar</h1>
-      <div>
-        <button onClick={e => handleDateSelection(e)} value="03 May 2021">03 May 2021</button>
-        <button onClick={e => handleDateCheck(e)} >Check date</button>
-      </div>
-      <div>
-        <p onClick={e => handleDateSelection(e)}>05 May 2021</p>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <div className="result-calendar">
+          <Calendar onChange={calendarChange} value={calDate} />
+        </div>
+        <div>
+          <h3>Current Date Selected</h3>
+          {filteredAppointments.length > 0 ?
+            filteredAppointments.map((appoint) =>
+              <div key={appoint.id}>
+                <p>{appoint.id}</p>
+                <p>{appoint.date}</p>
+                <p>{appoint.time}</p>
+                <p>{appoint.firstName} {appoint.lastName}</p>
+              </div>
+            ) : <div><p>Select A Date</p></div>
+          }
+        </div>
       </div>
     </div>
   )
