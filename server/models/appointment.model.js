@@ -22,6 +22,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         date: {
             type: Sequelize.STRING,
+            isDate: true,
             allowNull: false,
         },
         time: {
