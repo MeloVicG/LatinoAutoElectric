@@ -77,6 +77,12 @@
   margin: 1%;
 }
 
+.formBalance {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 1%;
+}
 .confirmGroup {
   justify-content: center;
   margin: 5% 25% 5% 25%;
@@ -89,15 +95,14 @@
 }
 
 .serviceCheckboxes {
-  display: inline-flex;
+  display: flex;
   margin: 1%;
   height: auto;
   justify-content: space-evenly;
 }
 
 .serviceType {
-  border: 1px solid red;
-  display: block;
+  display: inline-block;
 }
 
 .confirmLabel {

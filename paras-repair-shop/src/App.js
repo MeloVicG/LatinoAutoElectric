@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import { Router } from '@reach/router';
 import { useState } from 'react';
@@ -20,8 +19,8 @@ import ArchivePage from './views/ArchivePage';
 function App() {
 
   const [appointments, setAppointments] = useState([]);
-  const [selectedDate, setSelectedDate] = useState([]);
-
+  const [selectedDate, setSelectedDate] = useState("");
+  const [dailyAppointments, setDailyAppointments] = useState([]);
   return (
     <div className="App">
       <Router>
@@ -40,11 +39,15 @@ function App() {
           setAppointments={setAppointments}
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
+          dailyAppointments={dailyAppointments}
+          setDailyAppointments={setDailyAppointments}
         />
         <DailyAppointmentsPage
           path="/daily-appointment"
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
+          dailyAppointments={dailyAppointments}
+          setDailyAppointments={setDailyAppointments}
         />
         <AppointmentDetailsPage path="/appointment-details" />
         <ArchivePage path="/archive" />
