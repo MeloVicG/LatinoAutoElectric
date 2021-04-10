@@ -22,6 +22,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         date: {
             type: Sequelize.STRING,
+            isDate: true,
             allowNull: false,
         },
         time: {
@@ -40,8 +41,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false,
             isNumeric: true,
-            len: [9, 10],
-
+            // len: [9, 10],
         },
         serviceType: {
             type: Sequelize.TEXT,
