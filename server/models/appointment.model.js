@@ -42,6 +42,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             isNumeric: true,
             // len: [9, 10],
+
         },
         serviceType: {
             type: Sequelize.TEXT,

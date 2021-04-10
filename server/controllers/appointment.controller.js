@@ -57,6 +57,22 @@ exports.findAll = (req, res) => {
         });
 };
 
+exports.findAllByDate = (req, res) => {
+    const date = req.selectedDate;
+    var condition = { date: { [Op.like]: `%${date}%` } };
+
+    Appointment.findAll({ where: condition })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving appointments."
+            });
+        });
+};
+
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
