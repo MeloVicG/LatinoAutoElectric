@@ -17,6 +17,7 @@ import ArchivePage from './views/ArchivePage';
 
 
 function App() {
+  console.log("This is api key:" + process.env.REACT_APP_GOOGLE_API_KEY);
 
   const [appointments, setAppointments] = useState([]);
   const [selectedDate, setSelectedDate] = useState("");
