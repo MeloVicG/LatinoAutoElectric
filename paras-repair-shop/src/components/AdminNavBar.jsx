@@ -8,10 +8,9 @@ const AdminNavBar = () => {
         <div className="navBarParent">
             <nav className="navBar">
                 {/* <CarLogo />  */}
-                <Link to="/dashboard" style={{textDecoration:"none"}}>Home</Link> 
-                <Link to="/daily-appointment" style={{textDecoration:"none"}}>Daily Schedule</Link> 
-                <Link to="/appointment-details" style={{textDecoration:"none"}}>Appointment Details</Link>  
-                <Link to="/archive" style={{textDecoration:"none"}}>Archive</Link>  
+                <Link to="/dashboard" style={{ textDecoration: "none" }}>Home</Link>
+                <Link to="/search" style={{ textDecoration: "none" }}>Search Appointments</Link>
+                <Link to="/archive" style={{ textDecoration: "none" }}>Archive</Link>
             </nav>
         </div>
     )
