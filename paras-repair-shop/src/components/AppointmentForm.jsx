@@ -61,7 +61,7 @@ const AppointmentForm = () => {
                             </div>
                         </div>
                     </div>
-                    <label className={styles.formHeading}>Appointment Time:</label>
+                    <label className={styles.formHeading}>Available Appointment Times:</label>
                     <div className={styles.formSection}>
                         <div className={styles.formBalance}>
                             <div >

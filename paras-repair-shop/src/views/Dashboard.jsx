@@ -4,8 +4,10 @@ import axios from 'axios';
 import Display from '../components/Display';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import styles from '../styles/Calendar.module.scss';
+import AdminNavBar from '../components/AdminNavBar';
 
-const Dashboard = ({ appointments, setAppointments, selectedDate, setSelectedDate, dailyAppointments, setDailyAppointments }) => {
+const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId }) => {
 
   const [validation, setValidation] = useState("");
   const [userResults, setUserResults] = useState([]);
@@ -35,28 +37,40 @@ const Dashboard = ({ appointments, setAppointments, selectedDate, setSelectedDat
     setFilteredAppointments(filtered);
   }
 
+  const handleSelection = (id) => {
+    setSelectedId(id);
+    navigate("/appointment-details");
+  }
+
   return (
     <div>
-      <h1>Calendar</h1>
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <div className="result-calendar">
+      <h1>Latinos Auto Electric Admin</h1>
+      <AdminNavBar />
+      <h1 className={styles.title}>Calendar</h1>
+      <div className={styles.calendarContainer}>
+        <div className="result-calendar" >
           <Calendar onChange={calendarChange} value={calDate} />
         </div>
-        <div>
-          <h3>Current Date Selected</h3>
+      </div>
+      <div>
+        <h3>Daily Schedule</h3>
+        <div className={styles.dailyBox}>
           {filteredAppointments.length > 0 ?
             filteredAppointments.map((appoint) =>
-              <div key={appoint.id}>
-                <p>{appoint.id}</p>
-                <p>{appoint.date}</p>
-                <p>{appoint.time}</p>
-                <p>{appoint.firstName} {appoint.lastName}</p>
+              <div className={styles.appointmentGroup} onClick={() => handleSelection(`${appoint.id}`)} key={appoint.id}>
+                <div className={styles.appointmentLeft}>
+                  <p>{appoint.time}</p>
+                </div>
+                <div className={styles.appointmentRight}>
+                  <p>{appoint.firstName} {appoint.lastName}</p>
+                  <p>{appoint.phone}</p>
+                </div>
               </div>
             ) : <div><p>Select A Date</p></div>
           }
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
