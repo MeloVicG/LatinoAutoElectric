@@ -1,0 +1,49 @@
+.title {
+  margin-top: 1%;
+}
+.calendarContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
+
+.dailyBox {
+  display: block;
+  justify-content: center;
+}
+
+.appointmentGroup {
+  width: 50%;
+  height: 45px;
+  border: 0.5px solid black;
+  background-color: #f0f0f0;
+  display: inline-flex;
+  border-radius: 8px;
+  &:hover {
+    background-color: #00b0f4;
+  }
+}
+
+.appointmentLeft {
+  width: 20%;
+  text-align: center;
+  margin: 1%;
+}
+
+.appointmentRight {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 1%;
+}
+
+.appointmentLink {
+  color: inherit;
+  text-decoration: inherit;
+  &:hover {
+    text-decoration: inherit;
+    color: inherit;
+    font-weight: bold;
+  }
+}

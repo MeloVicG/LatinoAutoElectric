@@ -11,17 +11,15 @@ import ReviewPage from './views/ReviewPage';
 import FaqPage from './views/FaqPage';
 import AdminLogin from './views/AdminLogin';
 import Dashboard from './views/Dashboard';
-import DailyAppointmentsPage from './views/DailyAppointmentsPage';
 import AppointmentDetailsPage from './views/AppointmentDetailsPage';
 import ArchivePage from './views/ArchivePage';
 
 
 function App() {
-  console.log("This is api key:" + process.env.REACT_APP_GOOGLE_API_KEY);
 
   const [appointments, setAppointments] = useState([]);
-  const [selectedDate, setSelectedDate] = useState("");
-  const [dailyAppointments, setDailyAppointments] = useState([]);
+  const [selectedId, setSelectedId] = useState("");
+
   return (
     <div className="App">
       <Router>
@@ -38,19 +36,14 @@ function App() {
           path="/dashboard"
           appointments={appointments}
           setAppointments={setAppointments}
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          dailyAppointments={dailyAppointments}
-          setDailyAppointments={setDailyAppointments}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
         />
-        <DailyAppointmentsPage
-          path="/daily-appointment"
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          dailyAppointments={dailyAppointments}
-          setDailyAppointments={setDailyAppointments}
+        <AppointmentDetailsPage
+          path="/appointment-details"
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
         />
-        <AppointmentDetailsPage path="/appointment-details" />
         <ArchivePage path="/archive" />
       </Router>
     </div>
