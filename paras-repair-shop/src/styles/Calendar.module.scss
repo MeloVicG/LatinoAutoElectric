@@ -11,10 +11,12 @@
 .dailyBox {
   display: block;
   justify-content: center;
+  width: 50%;
+  margin-left: 25%;
 }
 
 .appointmentGroup {
-  width: 50%;
+  width: 100%;
   height: 45px;
   border: 0.5px solid black;
   background-color: #f0f0f0;

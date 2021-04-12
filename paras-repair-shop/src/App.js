@@ -13,6 +13,7 @@ import AdminLogin from './views/AdminLogin';
 import Dashboard from './views/Dashboard';
 import AppointmentDetailsPage from './views/AppointmentDetailsPage';
 import ArchivePage from './views/ArchivePage';
+import SearchAppointments from './views/SearchAppointments';
 
 
 function App() {
@@ -43,6 +44,11 @@ function App() {
           path="/appointment-details"
           selectedId={selectedId}
           setSelectedId={setSelectedId}
+        />
+        <SearchAppointments
+          path="/search"
+          appointments={appointments}
+          setAppointments={setAppointments}
         />
         <ArchivePage path="/archive" />
       </Router>
