@@ -14,12 +14,14 @@ import Dashboard from './views/Dashboard';
 import AppointmentDetailsPage from './views/AppointmentDetailsPage';
 import ArchivePage from './views/ArchivePage';
 import SearchAppointments from './views/SearchAppointments';
+import UpdateAllFields from './components/UpdateAllFields';
 
 
 function App() {
 
   const [appointments, setAppointments] = useState([]);
   const [selectedId, setSelectedId] = useState("");
+  const [selectedAppointment, setSelectedAppointment] = useState({});
 
   return (
     <div className="App">
@@ -44,6 +46,15 @@ function App() {
           path="/appointment-details"
           selectedId={selectedId}
           setSelectedId={setSelectedId}
+          selectedAppointment={selectedAppointment}
+          setSelectedAppointment={setSelectedAppointment}
+        />
+        <UpdateAllFields
+          path="/update-all-fields"
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
+          selectedAppointment={selectedAppointment}
+          setSelectedAppointment={setSelectedAppointment}
         />
         <SearchAppointments
           path="/search"
