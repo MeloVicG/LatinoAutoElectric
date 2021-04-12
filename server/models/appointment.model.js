@@ -17,10 +17,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         phone: {
             //change to string
-            type: Sequelize.BIGINT,
+            type: Sequelize.STRING,
+            // isNumeric: true,
             // allowNull: false,
         },
         date: {
+            //dateonly
             type: Sequelize.STRING,
             isDate: true,
             // allowNull: false,

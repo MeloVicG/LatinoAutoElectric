@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "@reach/router";
 import axios from 'axios';
 import AdminNavBar from '../components/AdminNavBar';
+import UpdateShopComments from '../components/UpdateShopComments';
 
 
 
-const AppointmentDetailsPage = ({ selectedId }) => {
+const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAppointment }) => {
 
-    const [selectedAppointment, setSelectedAppointment] = useState({});
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         axios.get("http://localhost:8080/api/appointments/" + selectedId)
@@ -19,6 +20,18 @@ const AppointmentDetailsPage = ({ selectedId }) => {
                 console.log(err);
             })
     }, []);
+    let hidden = <></>;
+    const handleComments = () => {
+        setShowForm(true);
+    }
+
+    const handleHideComments = () => {
+        setShowForm(false);
+    }
+
+    const handleServiceComplete = () => {
+        alert("Are you sure service has been completed for this customer?");
+    }
 
     return (
         <div>
@@ -31,9 +44,16 @@ const AppointmentDetailsPage = ({ selectedId }) => {
             <p>{selectedAppointment.make} {selectedAppointment.model} {selectedAppointment.year}</p>
             <p>{selectedAppointment.serviceType}</p>
             <p>{selectedAppointment.clientComments}</p>
+            <p>{selectedAppointment.mechanicComments}</p>
             <div>
-                <button>Update</button>|<button>Add Comments</button>|<button>Archive</button>|<button>Cancel</button>
+                <Link to="/update-all-fields"><button>Update</button></Link> |<button onClick={handleComments}>Add Comments</button> |
+                <button onClick={handleServiceComplete}>Complete</button> | <button>Delete</button>
             </div>
+            {showForm ?
+                <div>
+                    <UpdateShopComments mechanicComments={selectedAppointment.mechanicComments} selectedAppointment={selectedAppointment} />
+                    <button onClick={handleHideComments}>Hide Comment Form</button>
+                </div> : <></>}
         </div>
 
     )
