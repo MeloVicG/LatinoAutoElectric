@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { navigate } from '@reach/router'
 import styles from '../styles/AppointmentForm.module.scss';
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
+import axios from 'axios';
 
 
-const AppointmentForm = () => {
+const AppointmentForm = (props) => {
+    const {appointments, setAppointments} = (props);
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -12,8 +15,9 @@ const AppointmentForm = () => {
     const [phone, setPhone] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [vehicleType, setVehicleType] = useState("");
-    const [vehicleYear, setVehicleYear] = useState("");
+    const [make, setMake] = useState("");
+    const [model, setModel] = useState("");
+    const [year, setYear] = useState("");
     const [reason, setReason] = useState("");
     const [comments, setComments] = useState("");
 
@@ -25,9 +29,45 @@ const AppointmentForm = () => {
         optionList.push(<option value={"vehicleList[i]"} key={i}>vehicleList[i]</option>);
     };
 
+    const addContact = (appointment) => {
+        setAppointments([...appointments, appointment])
+    }
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+
+        const newContact = {
+            firstName,
+            lastName,
+            email,
+            phone,
+            date,
+            time,
+            make,
+            model,
+            year,
+            reason,
+            comments
+        }
+        axios.post('http://localhost:8080/api/appointments', newContact)
+            .then(res => {
+                console.log("axios.post Response: ", res);
+                addContact(res.data)
+                navigate('/dashboard')
+            })
+                .catch(err=>{
+                    console.log(err.response)
+        //             const {errors} = err.response.data;
+        //             const messages = Object.keys(errors).map(error => errors[error].message);
+        //             setErrorMessages(messages);
+                })
+    }
+
+
+
     return (
         <div>
-            <form className={styles.appointmentForm} >
+            <form className={styles.appointmentForm} onSubmit={onSubmitHandler}>
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
                 <div className={styles.apFormTop}>
                     <label className={styles.formHeading}>Contact Info:</label>
@@ -71,7 +111,7 @@ const AppointmentForm = () => {
                             <div>
                                 <label>Select Time:</label>
                                 <div>
-                                    <input type="time" onChange={e => setTime(e.target.value)} />
+                                    <input type="text" onChange={e => setTime(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -81,15 +121,15 @@ const AppointmentForm = () => {
                         <div className={styles.formBalance}>
                             <div className={styles.formGroup}>
                                 <label>Make:</label>
-                                <input type="text" onChange={e => setPhone(e.target.value)} />
+                                <input type="text" onChange={e => setMake(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Model:</label>
-                                <input type="text" onChange={e => setPhone(e.target.value)} />
+                                <input type="text" onChange={e => setModel(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
                                 <label> Year:</label>
-                                <input type="number" onChange={e => setPhone(e.target.value)} />
+                                <input type="number" onChange={e => setYear(e.target.value)} />
                             </div>
                         </div>
                     </div>
@@ -100,7 +140,7 @@ const AppointmentForm = () => {
                                 <label>Reason for Visit:</label>
                                 <div className={styles.serviceCheckboxes}>
                                     <div className={styles.serviceType}>
-                                        {/* <select id="vehicle" onChange={e => setVehicleType(e.target.value)}>
+                                        {/* <select id="vehicle" onChange={e => setMake(e.target.value)}>
                                             <option value=""></option>
                                             <option value="Oil Change">Oil Change</option>
                                         </select>  */}
