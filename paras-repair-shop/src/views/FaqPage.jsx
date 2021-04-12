@@ -54,7 +54,7 @@ const FaqPage = () => {
                         <select value={answer} className="dropDownQuestions" type="text" onChange={(e) => setAnswer(e.target.value)}>
                             <h4>Questions?</h4>
                             <option value="">Questions?</option>
-                            <option value="Appointments can be made on our schedule Page">Where can I make an appointment?</option>
+                            <option value="Appointments can be made on our Schedule Page">Where can I make an appointment?</option>
                             <option value="We are open :
                                 Weekdays 8am - 5pm,
                                 Saturday 9am - 2pm,
@@ -73,7 +73,7 @@ const FaqPage = () => {
                                 <h3>{val.A2}</h3>
                             </div>
                         )} */}
-                        {AA1}
+                        {/* {AA1} */}
                         {/* {A1}
                         {A2}
                         {A3}

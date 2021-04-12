@@ -5,7 +5,8 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 
-const AppointmentPage = () => {
+const AppointmentPage = (props) => {
+    const {appointments, setAppointments} = (props);
 
     return (
         <div className="wrapper">
@@ -13,7 +14,10 @@ const AppointmentPage = () => {
             <NavBar/>
             <div className={styles.banner}>
                 <h1>Appointment</h1>
-                <AppointmentForm />
+                <AppointmentForm 
+                appointments={appointments}
+                setAppointments={setAppointments}
+                />
             </div>
             <Footer/>
         </div>
