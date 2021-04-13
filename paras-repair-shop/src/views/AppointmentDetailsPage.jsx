@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import axios from 'axios';
 import AdminNavBar from '../components/AdminNavBar';
 import UpdateShopComments from '../components/UpdateShopComments';
+import e from 'cors';
 
 
 
-const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAppointment }) => {
+const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAppointment, mechanicComments, setMechanicComments }) => {
 
     const [showForm, setShowForm] = useState(false);
-
+    const [buttonName, setButtonName] = useState("Add Comments");
     useEffect(() => {
         axios.get("http://localhost:8080/api/appointments/" + selectedId)
             .then(res => {
@@ -21,22 +22,44 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
             })
     }, []);
     let hidden = <></>;
+
     const handleComments = () => {
-        setShowForm(true);
+        if (buttonName === "Add Comments") {
+            setShowForm(true);
+            setButtonName("Hide Form");
+        } else {
+            setShowForm(false);
+            setButtonName("Add Comments");
+
+        }
     }
 
-    const handleHideComments = () => {
-        setShowForm(false);
-    }
 
-    const handleServiceComplete = () => {
-        alert("Are you sure service has been completed for this customer?");
+    const handleServiceComplete = (e) => {
+        // prompt("Are you sure service has been completed for this customer?");
+        e.preventDefault();
+        let newAppoint = { ...selectedAppointment };
+        newAppoint.serviceComplete = true;
+        axios.put("http://localhost:8080/api/appointments/" + selectedId, {
+            ...newAppoint
+        }, [])
+            .then(res => {
+                setSelectedAppointment(newAppoint);
+                navigate("/appointment-details");
+            })
+            .catch((err) => {
+                console.log(err);
+                // const { errors } = err.response.data;
+                // const messages = Object.keys(errors).map(err => errors[err].message);
+                // setValidations([...validations, messages])
+                // setValidations(messages)
+            })
     }
 
     return (
         <div>
             <AdminNavBar />
-            <h1>Appointment</h1>
+            <h1>Appointment {selectedAppointment.serviceComplete}</h1>
             <h3>{selectedAppointment.date} - {selectedAppointment.time}</h3>
             <p>{selectedAppointment.firstName} {selectedAppointment.lastName}</p>
             <p>{selectedAppointment.phone}</p>
@@ -45,14 +68,14 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
             <p>{selectedAppointment.serviceType}</p>
             <p>{selectedAppointment.clientComments}</p>
             <p>{selectedAppointment.mechanicComments}</p>
+            {selectedAppointment.serviceComplete === true ? <p>Service Complete!</p> : <></>}
             <div>
-                <Link to="/update-all-fields"><button>Update</button></Link> |<button onClick={handleComments}>Add Comments</button> |
+                <Link to="/update-all-fields"><button>Update</button></Link> |<button onClick={handleComments}>{buttonName}</button> |
                 <button onClick={handleServiceComplete}>Complete</button> | <button>Delete</button>
             </div>
             {showForm ?
                 <div>
                     <UpdateShopComments mechanicComments={selectedAppointment.mechanicComments} selectedAppointment={selectedAppointment} />
-                    <button onClick={handleHideComments}>Hide Comment Form</button>
                 </div> : <></>}
         </div>
 

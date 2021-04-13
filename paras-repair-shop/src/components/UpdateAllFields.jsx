@@ -23,7 +23,7 @@ const UpdateAllFields = ({ selectedAppointment, setSelectedAppointment }) => {
     const [mechanicComments, setMechanicComments] = useState(`${selectedAppointment.mechanicComments}`);
     const [serviceComplete, setServiceComplete] = useState(false);
 
-
+    //CHECKOUT DETAILS PAGE FOR CONDENSED CODE ON AXIOS PUT
     const updateAppointment = (e) => {
         e.preventDefault();
         axios.put('http://localhost:8080/api/appointments/' + selectedAppointment.id, {
