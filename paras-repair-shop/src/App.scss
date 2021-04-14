@@ -65,8 +65,11 @@
   font-weight: bold;
   margin: 25px;
   &:hover {
-    font-size: 22px;
+    // font-size: 23px;
     text-shadow: 1px 1px black;
+    background-color: aliceblue;
+    padding: 8px 5px;
+    border: aqua 1px solid;
   }
 }
 

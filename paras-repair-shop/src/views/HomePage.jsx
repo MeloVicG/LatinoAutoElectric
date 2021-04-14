@@ -18,8 +18,10 @@ const HomePage = () => {
         <div className={styles.App}>
             <div className={styles.wrapper}>
                 <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
+
                 {/* has css */}
                 <NavBar />
+                
                 <div className={styles.container}>
                     <div className={styles.containerTop}>
                         <div className={styles.homeTopSection}>
