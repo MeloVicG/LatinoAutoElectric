@@ -23,6 +23,7 @@ const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId,
 
     return (
         <>
+            <h1>Latinos Auto Electric Admin</h1>
             <AdminNavBar />
             <h1>Archived Appointments</h1>
             <SearchBar input={input} updateInput={updateInput} onChange={updateInput} />

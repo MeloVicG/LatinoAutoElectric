@@ -20,6 +20,7 @@ import UpdateShopComments from './components/UpdateShopComments';
 import SearchBar from './components/SearchBar';
 
 
+
 function App() {
 
   const [appointments, setAppointments] = useState([]);
@@ -27,6 +28,7 @@ function App() {
   const [selectedAppointment, setSelectedAppointment] = useState({});
   const [mechanicComments, setMechanicComments] = useState("");
   const [appointmentList, setAppointmentList] = useState([]);
+
 
   //if this works, need to move this to dashboard for when you first reach the admin stuff.
   useEffect(() => {
@@ -65,20 +67,16 @@ function App() {
           setSelectedId={setSelectedId}
           selectedAppointment={selectedAppointment}
           setSelectedAppointment={setSelectedAppointment}
-          mechanicComments={mechanicComments}
-          setMechanicComments={setMechanicComments}
+          appointments={appointments}
+          setAppointments={setAppointments}
         />
         <UpdateAllFields
           path="/update-all-fields"
-          selectedId={selectedId}
-          setSelectedId={setSelectedId}
           selectedAppointment={selectedAppointment}
           setSelectedAppointment={setSelectedAppointment}
         />
         <UpdateShopComments
           path="/update-shop-comments"
-          mechanicComments={mechanicComments}
-          setMechanicComments={setMechanicComments}
         />
         <SearchAppointments
           path="/search"
@@ -99,7 +97,7 @@ function App() {
           setAppointmentList={setAppointmentList}
         />
       </Router>
-    </div>
+    </div >
   );
 }
 

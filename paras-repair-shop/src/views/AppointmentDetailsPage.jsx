@@ -3,11 +3,11 @@ import { Link, navigate } from "@reach/router";
 import axios from 'axios';
 import AdminNavBar from '../components/AdminNavBar';
 import UpdateShopComments from '../components/UpdateShopComments';
-import e from 'cors';
 
 
 
-const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAppointment, mechanicComments, setMechanicComments }) => {
+
+const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAppointment, appointments, setAppointments }) => {
 
     const [showForm, setShowForm] = useState(false);
     const [buttonName, setButtonName] = useState("Add Comments");
@@ -56,8 +56,27 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
             })
     }
 
+    const removeAppointment = (appointmentId) => {
+        setAppointments(appointments.filter(appoint => appoint.id !== appointmentId));
+
+    }
+
+    const handleDelete = (id) => {
+        if (window.confirm(`Delete ${selectedAppointment.time} appointment on ${selectedAppointment.date}?`)) {
+            axios.delete('http://localhost:8080/api/appointments/' + id)
+                .then(res => {
+                    removeAppointment(id);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            navigate('/dashboard');
+        }
+
+    }
     return (
         <div>
+            <h1>Latinos Auto Electric Admin</h1>
             <AdminNavBar />
             <h1>Appointment {selectedAppointment.serviceComplete}</h1>
             <h3>{selectedAppointment.date} - {selectedAppointment.time}</h3>
@@ -71,7 +90,7 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
             {selectedAppointment.serviceComplete === true ? <p>Service Complete!</p> : <></>}
             <div>
                 <Link to="/update-all-fields"><button>Update</button></Link> |<button onClick={handleComments}>{buttonName}</button> |
-                <button onClick={handleServiceComplete}>Complete</button> | <button>Delete</button>
+                <button onClick={handleServiceComplete}>Complete</button> | <button onClick={(e) => handleDelete(selectedAppointment.id)}>Delete</button>
             </div>
             {showForm ?
                 <div>

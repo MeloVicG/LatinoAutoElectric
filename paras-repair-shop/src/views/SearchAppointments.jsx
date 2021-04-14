@@ -33,6 +33,7 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
 
     return (
         <>
+            <h1>Latinos Auto Electric Admin</h1>
             <AdminNavBar />
             <h1>Appointment List</h1>
             <SearchBar input={input} updateInput={updateInput} onChange={updateInput} />
