@@ -46,7 +46,10 @@ function App() {
     <div className="App">
       <Router>
         <HomePage path="/" />
-        <AppointmentPage path="/schedule" />
+        <AppointmentPage path="/schedule" 
+        appointments={appointments}
+        setAppointments={setAppointments}
+        />
         <AboutPage path="/about" />
         <ServicesPage path="/services" />
         <LocationPage path="/directions" />

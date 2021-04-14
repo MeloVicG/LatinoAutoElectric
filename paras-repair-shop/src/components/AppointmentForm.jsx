@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const AppointmentForm = ({ appointments, setAppointments, }) => {
 
+
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -19,6 +20,8 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     const [year, setYear] = useState("");
     const [serviceType, setServiceType] = useState([]);
     const [clientComments, setClientComments] = useState("");
+    const [reason, setReason] = useState("");
+    const [comments, setComments] = useState("");
 
     const [validations, setValidations] = useState([]);
 
@@ -70,9 +73,45 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             })
     }
 
+    const addContact = (appointment) => {
+        setAppointments([...appointments, appointment])
+    }
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+
+        const newContact = {
+            firstName,
+            lastName,
+            email,
+            phone,
+            date,
+            time,
+            make,
+            model,
+            year,
+            reason,
+            comments
+        }
+        axios.post('http://localhost:8080/api/appointments', newContact)
+            .then(res => {
+                console.log("axios.post Response: ", res);
+                addContact(res.data)
+                navigate('/dashboard')
+            })
+                .catch(err=>{
+                    console.log(err.response)
+        //             const {errors} = err.response.data;
+        //             const messages = Object.keys(errors).map(error => errors[error].message);
+        //             setErrorMessages(messages);
+                })
+    }
+
+
+
     return (
         <div>
-            <form className={styles.appointmentForm} onSubmit={onSubmitHandler} >
+            <form className={styles.appointmentForm} onSubmit={onSubmitHandler}>
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
                 <div className={styles.apFormTop}>
                     <label className={styles.formHeading}>Contact Info:</label>
@@ -116,7 +155,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             <div>
                                 <label>Select Time:</label>
                                 <div>
-                                    <input type="time" onChange={e => setTime(e.target.value)} />
+                                    <input type="text" onChange={e => setTime(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -145,6 +184,10 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                                 <label>Reason for Visit:</label>
                                 <div className={styles.serviceCheckboxes}>
                                     <div className={styles.serviceType}>
+                                        {/* <select id="vehicle" onChange={e => setMake(e.target.value)}>
+                                            <option value=""></option>
+                                            <option value="Oil Change">Oil Change</option>
+                                        </select>  */}
                                         <div>
                                             <input type="checkbox" name="battery" value="Battery Service" onChange={handleCheckbox} />
                                             <label htmlFor="battery"> Battery Service </label>
