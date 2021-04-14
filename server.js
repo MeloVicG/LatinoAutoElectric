@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 db.sequelize.sync();
 
 require("./server/routes/appointment.routes")(app);
+require("./server/routes/admin.routes")(app);
 // simple route
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to the LAE app." });

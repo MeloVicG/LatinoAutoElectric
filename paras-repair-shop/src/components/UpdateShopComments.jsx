@@ -4,7 +4,7 @@ import axios from 'axios';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-const UpdateShopComments = ({ selectedAppointment, setSelectedAppointment }) => {
+const UpdateShopComments = ({ selectedAppointment, setSelectedAppointment, handleComments, selectedId }) => {
 
     const [firstName, setFirstName] = useState(`${selectedAppointment.firstName}`);
     const [lastName, setLastName] = useState(`${selectedAppointment.lastName}`);
@@ -22,7 +22,7 @@ const UpdateShopComments = ({ selectedAppointment, setSelectedAppointment }) => 
 
     const updateAppointment = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:8080/api/appointments/' + selectedAppointment.id, {
+        axios.put('http://localhost:8080/api/appointments/' + selectedId, {
             firstName,
             lastName,
             email,
@@ -53,6 +53,7 @@ const UpdateShopComments = ({ selectedAppointment, setSelectedAppointment }) => 
                     "mechanicComments": mechanicComments,
                     "serviceComplete": serviceComplete,
                 })
+                handleComments();
                 navigate("/appointment-details");
             })
             .catch((err) => {

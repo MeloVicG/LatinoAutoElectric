@@ -94,7 +94,7 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
             </div>
             {showForm ?
                 <div>
-                    <UpdateShopComments mechanicComments={selectedAppointment.mechanicComments} selectedAppointment={selectedAppointment} />
+                    <UpdateShopComments mechanicComments={selectedAppointment.mechanicComments} selectedAppointment={selectedAppointment} setSelectedAppointment={setSelectedAppointment} selectedId={selectedId} handleComments={handleComments} />
                 </div> : <></>}
         </div>
 
