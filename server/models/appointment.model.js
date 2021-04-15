@@ -24,23 +24,24 @@ module.exports = (sequelize, Sequelize) => {
         date: {
             //dateonly
             type: Sequelize.STRING,
-            allowNull: false,
+            isDate: true,
+            // allowNull: false,
         },
         time: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         make: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         model: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         year: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             isNumeric: true,
             // len: [9, 10],
 

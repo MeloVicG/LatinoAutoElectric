@@ -18,14 +18,16 @@ const HomePage = () => {
         <div className={styles.App}>
             <div className={styles.wrapper}>
                 <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
+
                 {/* has css */}
                 <NavBar />
+
                 <div className={styles.container}>
                     <div className={styles.containerTop}>
                         <div className={styles.homeTopSection}>
                             {/* <img className={styles.image1} src="https://www.wardsauto.com/sites/wardsauto.com/files/styles/article_featured_retina/public/uploads/2017/03/ford-focus-michigan-assembly-plant.jpg?itok=da7Zvhu9" alt="first image" />
                             <img className={styles.image2} src="https://i.pinimg.com/originals/c1/9f/a5/c19fa5a2b6de80d4b5e8866f2cf36c0f.jpg" alt="second" /> */}
-                            <SliderCarousel/>
+                            <SliderCarousel />
                         </div>
                     </div>
                     <div className={styles.quote}>
@@ -38,19 +40,19 @@ const HomePage = () => {
                     <div className={styles.homeMidBox}>
                         <div className={styles.homeMidElement}>
                             <Link to="/about"> <p className={styles.homeMidP}> Gallery </p> </Link>
-                            <img src={Gallery} alt="gallery"/>
+                            <img src={Gallery} alt="gallery" />
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div className={styles.homeMidElement}>
                             <Link to="/services"> <p className={styles.homeMidP}>Service</p> </Link>
-                            <img src={Services} alt="services"/>
+                            <img src={Services} alt="services" />
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
                         <div className={styles.homeMidElement}>
                             <Link to="/reviews"><p className={styles.homeMidP}> Reviews </p> </Link>
-                            <img src={Customer} alt="customer"/>
+                            <img src={Customer} alt="customer" />
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, culpa ad saepe necessitatibus quidem mollitia numquam nihil eos sunt sequi adipisci, quae est, eaque sapiente. Sit reprehenderit animi voluptate molestias?</p>
                             {/* <button style={{ boxShadow: "1px 1px 1px 1px", backgroundColor: "white", fontSize: "20px" }}>View</button> */}
                         </div>
@@ -60,7 +62,7 @@ const HomePage = () => {
                 <div className={styles.locationBox}>
 
                     {/* <img style={{width:"50%"}} className="img3" src={mapPlaceholder} alt="map" /> */}
-                    <GoogleMap/>
+                    <GoogleMap />
                     <div style={{ marginLeft: "100px" }} className="locationBoxText">
                         <p>We currently have one local shop dedicated to serving our community's auto needs. We're located at:</p>
                         <div>
