@@ -1,6 +1,7 @@
 import './App.scss';
 import { Router } from '@reach/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from "axios";
 import HomePage from './views/HomePage';
 import AppointmentPage from './views/AppointmentPage';
 import AboutPage from './views/AboutPage';
@@ -15,6 +16,9 @@ import AppointmentDetailsPage from './views/AppointmentDetailsPage';
 import ArchivePage from './views/ArchivePage';
 import SearchAppointments from './views/SearchAppointments';
 import UpdateAllFields from './components/UpdateAllFields';
+import UpdateShopComments from './components/UpdateShopComments';
+import SearchBar from './components/SearchBar';
+
 
 
 function App() {
@@ -22,6 +26,21 @@ function App() {
   const [appointments, setAppointments] = useState([]);
   const [selectedId, setSelectedId] = useState("");
   const [selectedAppointment, setSelectedAppointment] = useState({});
+  const [mechanicComments, setMechanicComments] = useState("");
+  const [appointmentList, setAppointmentList] = useState([]);
+
+
+  //if this works, need to move this to dashboard for when you first reach the admin stuff.
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/appointments/")
+      .then(res => {
+        let allAppointments = res.data;
+        setAppointments(allAppointments);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }, []);
 
   return (
     <div className="App">
@@ -51,22 +70,37 @@ function App() {
           setSelectedId={setSelectedId}
           selectedAppointment={selectedAppointment}
           setSelectedAppointment={setSelectedAppointment}
+          appointments={appointments}
+          setAppointments={setAppointments}
         />
         <UpdateAllFields
           path="/update-all-fields"
-          selectedId={selectedId}
-          setSelectedId={setSelectedId}
           selectedAppointment={selectedAppointment}
           setSelectedAppointment={setSelectedAppointment}
+        />
+        <UpdateShopComments
+          path="/update-shop-comments"
         />
         <SearchAppointments
           path="/search"
           appointments={appointments}
           setAppointments={setAppointments}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
+          appointmentList={appointmentList}
+          setAppointmentList={setAppointmentList}
         />
-        <ArchivePage path="/archive" />
+        <ArchivePage
+          path="/archive"
+          appointments={appointments}
+          setAppointments={setAppointments}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
+          appointmentList={appointmentList}
+          setAppointmentList={setAppointmentList}
+        />
       </Router>
-    </div>
+    </div >
   );
 }
 

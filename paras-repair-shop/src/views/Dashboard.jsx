@@ -14,16 +14,17 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId })
   const [calDate, setCalDate] = useState(new Date());
   const [filteredAppointments, setFilteredAppointments] = useState([]);
 
-  useEffect(() => {
-    axios.get("http://localhost:8080/api/appointments/")
-      .then(res => {
-        let allAppointments = res.data;
-        setAppointments(allAppointments);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }, []);
+  //LEAVE HERE
+  // useEffect(() => {
+  //   axios.get("http://localhost:8080/api/appointments/")
+  //     .then(res => {
+  //       let allAppointments = res.data;
+  //       setAppointments(allAppointments);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+  // }, []);
 
   const calendarChange = (calDate) => {
     setCalDate(calDate);
