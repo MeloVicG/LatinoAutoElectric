@@ -140,10 +140,6 @@ const AppointmentForm = (props) => {
                                 <label>Reason for Visit:</label>
                                 <div className={styles.serviceCheckboxes}>
                                     <div className={styles.serviceType}>
-                                        {/* <select id="vehicle" onChange={e => setMake(e.target.value)}>
-                                            <option value=""></option>
-                                            <option value="Oil Change">Oil Change</option>
-                                        </select>  */}
                                         <div>
                                             <input type="checkbox" name="battery" value="battery" />
                                             <label for="vehicle1"> Battery Service </label>
