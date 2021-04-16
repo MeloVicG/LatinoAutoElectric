@@ -47,7 +47,7 @@ module.exports = (sequelize, Sequelize) => {
 
         },
         serviceType: {
-            type: Sequelize.TEXT,
+            type: Sequelize.STRING,
         },
         clientComments: {
             type: Sequelize.TEXT,
@@ -55,9 +55,9 @@ module.exports = (sequelize, Sequelize) => {
         mechanicComments: {
             type: Sequelize.TEXT,
         },
-        serviceComplete: {
-            type: Sequelize.BOOLEAN,
-        }
+        // serviceComplete: {
+        //     type: Sequelize.BOOLEAN,
+        // }
     }, { timestamps: true });
 
     return Appointment;

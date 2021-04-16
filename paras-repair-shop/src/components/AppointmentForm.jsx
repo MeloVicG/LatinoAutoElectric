@@ -8,7 +8,6 @@ import axios from 'axios';
 
 const AppointmentForm = ({ appointments, setAppointments, }) => {
 
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -30,9 +29,12 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     }
 
     const handleCheckbox = (e) => {
+        //if value contains (e)
         if (serviceType.includes(e.target.value)) {
+            console.log("off ", e.target.value);
             setServiceType(serviceType.filter(checkbox => checkbox !== e.target.value))
         } else {
+            console.log("on ", e.target.value);
             setServiceType([...serviceType, e.target.value]);
         }
     }
@@ -73,46 +75,26 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             })
     }
 
-    const addContact = (appointment) => {
-        setAppointments([...appointments, appointment])
-    }
 
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-
-        const newContact = {
-            firstName,
-            lastName,
-            email,
-            phone,
-            date,
-            time,
-            make,
-            model,
-            year,
-            reason,
-            comments
-        }
-        axios.post('http://localhost:8080/api/appointments', newContact)
-            .then(res => {
-                console.log("axios.post Response: ", res);
-                addContact(res.data)
-                navigate('/dashboard')
-            })
-                .catch(err=>{
-                    console.log(err.response)
-        //             const {errors} = err.response.data;
-        //             const messages = Object.keys(errors).map(error => errors[error].message);
-        //             setErrorMessages(messages);
-                })
-    }
-
+    // const calendarChange = (calDate) => {
+    //     setCalDate(calDate);
+    //     let filtered = [];
+    //     appointments.map(appointment => {
+    //         const newCalDateFormat = calDate.toLocaleString().split(",")[0];
+    //         if (appointment.date === newCalDateFormat) {
+    //             filtered.push(appointment);
+    //         };
+    //     });
+    //     setFilteredAppointments(filtered);
+    // }
 
 
     return (
         <div>
             <form className={styles.appointmentForm} onSubmit={onSubmitHandler}>
+
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
+
                 <div className={styles.apFormTop}>
                     <label className={styles.formHeading}>Contact Info:</label>
                     <div className={styles.formSection}>
@@ -145,12 +127,13 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             </div>
                         </div>
                     </div>
+
                     <label className={styles.formHeading}>Available Appointment Times:</label>
                     <div className={styles.formSection}>
                         <div className={styles.formBalance}>
                             <div >
                                 <label>Select Date:</label>
-                                <Calendar onChange={e => setDate(e.target.value)} />
+                                <Calendar onChange={e => setDate(e.target.value)} value={date} />
                             </div>
                             <div>
                                 <label>Select Time:</label>
@@ -160,6 +143,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             </div>
                         </div>
                     </div>
+
                     <label className={styles.formHeading}>Vehicle Info:</label>
                     <div className={styles.formSection}>
                         <div className={styles.formBalance}>
@@ -172,11 +156,12 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                                 <input type="text" onChange={e => setModel(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
-                                <label> Year:</label>
+                                <label>Year:</label>
                                 <input type="number" onChange={e => setYear(e.target.value)} />
                             </div>
                         </div>
                     </div>
+
                     <label className={styles.formHeading}>Service Info:</label>
                     <div className={styles.formSection}>
                         <div className={styles.formRow}>
@@ -185,7 +170,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                                 <div className={styles.serviceCheckboxes}>
                                     <div className={styles.serviceType}>
                                         <div>
-                                            <input type="checkbox" name="battery" value="Battery Service" onChange={handleCheckbox} />
+                                            <input type="checkbox" name="battery" value="Battery Services" onChange={handleCheckbox} />
                                             <label htmlFor="battery"> Battery Service </label>
                                         </div>
                                         <div>
@@ -249,7 +234,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             </div>
                             <div className={styles.formComments}>
                                 <label className={styles.formCommentsLeft}>Additional Comments:</label>
-                                <textarea className={styles.formCommentsRight} onChange={e => setTime(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                                <textarea className={styles.formCommentsRight} onChange={e => setClientComments(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
                             </div>
                         </div>
                     </div>
