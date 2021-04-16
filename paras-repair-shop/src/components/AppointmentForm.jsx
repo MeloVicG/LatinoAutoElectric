@@ -17,7 +17,8 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     const [make, setMake] = useState("");
     const [model, setModel] = useState("");
     const [year, setYear] = useState("");
-    const [serviceType, setServiceType] = useState([]);
+    const [serviceTypeArray, setServiceTypeArray] = useState([]);
+    const [serviceType, setServiceType] = useState("");
     const [clientComments, setClientComments] = useState("");
 
     const [validations, setValidations] = useState([]);
@@ -63,22 +64,23 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     }
 
     const handleCheckbox = (e) => {
-        if (serviceType.includes(e.target.value)) {
-            setServiceType(serviceType.filter(checkbox => checkbox !== e.target.value))
+        if (serviceTypeArray.includes(e.target.value)) {
+            setServiceTypeArray(serviceTypeArray.filter(checkbox => checkbox !== e.target.value))
         } else {
-            setServiceType([...serviceType, e.target.value]);
+            setServiceTypeArray([...serviceTypeArray, e.target.value]);
         }
+        let serviceTypeString = "";
+        for (let i = 0; i < serviceTypeArray.length; i++) {
+            if (serviceTypeString === "") {
+                serviceTypeString = serviceTypeArray[i];
+            } else {
+                serviceTypeString = serviceTypeString + ", " + serviceTypeArray[i];
+            }
+        }
+        setServiceType(serviceTypeString);
     }
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        let serviceTypeString = "";
-        serviceType.map(checkbox => {
-            if (serviceTypeString === "") {
-                serviceTypeString = serviceTypeString + checkbox;
-            } else {
-                serviceTypeString = serviceType + ", " + checkbox;
-            }
-        })
         const newContact = {
             firstName,
             lastName,
@@ -89,7 +91,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             make,
             model,
             year,
-            serviceTypeString,
+            serviceType,
             clientComments
         }
         axios.post('http://localhost:8080/api/appointments', newContact)

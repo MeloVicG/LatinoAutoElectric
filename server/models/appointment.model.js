@@ -47,7 +47,7 @@ module.exports = (sequelize, Sequelize) => {
 
         },
         serviceType: {
-            type: Sequelize.TEXT,
+            type: Sequelize.STRING,
         },
         clientComments: {
             type: Sequelize.TEXT,

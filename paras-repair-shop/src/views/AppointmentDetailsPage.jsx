@@ -14,8 +14,8 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
     useEffect(() => {
         axios.get("http://localhost:8080/api/appointments/" + selectedId)
             .then(res => {
-                let details = res.data;
-                setSelectedAppointment(details);
+                console.log(res.data);
+                setSelectedAppointment(res.data);
             })
             .catch(err => {
                 console.log(err);
@@ -78,7 +78,7 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
         <div>
             <h1>Latinos Auto Electric Admin</h1>
             <AdminNavBar />
-            <h1>Appointment {selectedAppointment.serviceComplete}</h1>
+            <h1>Appointment</h1>
             <h3>{selectedAppointment.date} - {selectedAppointment.time}</h3>
             <p>{selectedAppointment.firstName} {selectedAppointment.lastName}</p>
             <p>{selectedAppointment.phone}</p>
