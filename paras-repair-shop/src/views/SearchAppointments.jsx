@@ -47,13 +47,6 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
                 </div> :
                 <></>
             }
-            {appointments.map((appoint, idx) =>
-                <div key={idx}>
-                    <p>{appoint.firstName}</p>
-                </div>
-            )
-
-            }
         </>
     );
 }
