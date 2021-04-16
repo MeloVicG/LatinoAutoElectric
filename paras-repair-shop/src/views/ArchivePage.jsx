@@ -37,13 +37,6 @@ const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId,
                 <></>
             }
 
-            {appointments.map((appoint, idx) =>
-                <div key={idx}>
-                    <p>{appoint.firstName}</p>
-                </div>
-            )
-
-            }
         </>
     );
 }
