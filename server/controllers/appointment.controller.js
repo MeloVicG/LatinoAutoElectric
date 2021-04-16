@@ -57,22 +57,6 @@ exports.findAll = (req, res) => {
         });
 };
 
-exports.findAllByDate = (req, res) => {
-    const date = req.selectedDate;
-    var condition = { date: { [Op.like]: `%${date}%` } };
-
-    Appointment.findAll({ where: condition })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message:
-                    err.message || "Some error occurred while retrieving appointments."
-            });
-        });
-};
-
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
@@ -142,7 +126,7 @@ exports.deleteAll = (req, res) => {
         truncate: false
     })
         .then(nums => {
-            res.send({ message: `${nums} Appointments were deleted successfully!` });
+            res.send({ message: `${nums} Tutorials were deleted successfully!` });
         })
         .catch(err => {
             res.status(500).send({
@@ -152,10 +136,15 @@ exports.deleteAll = (req, res) => {
         });
 };
 
-
-// {
-//     "totalItems": 8,
-//     "appointments": [...],
-//     "totalPages": 3,
-//     "currentPage": 1
-// }
+exports.findAllByDate = (req, res) => {
+    Appointment.findAll({ where: { published: true } })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving appointments."
+            });
+        });
+};

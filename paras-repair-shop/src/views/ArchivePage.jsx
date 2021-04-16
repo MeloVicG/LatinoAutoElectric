@@ -13,8 +13,11 @@ const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId,
 
     const updateInput = (input) => {
         console.log("appointments: " + appointments);
-        const filtered = appointments.filter(appoint => {
-            return appoint.email.includes(input) && appoint.serviceComplete === true;
+        let completedAppointments = appointments.filter(appoint => {
+            return appoint.serviceComplete !== null;
+        })
+        const filtered = completedAppointments.filter(appoint => {
+            return appoint.email.includes(input);
         })
         setInput(input);
         setAppointmentList(filtered);
@@ -32,6 +35,14 @@ const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId,
                     <AppointmentList appointmentList={appointmentList} selectedId={selectedId} setSelectedId={setSelectedId} />
                 </div> :
                 <></>
+            }
+
+            {appointments.map((appoint, idx) =>
+                <div key={idx}>
+                    <p>{appoint.firstName}</p>
+                </div>
+            )
+
             }
         </>
     );

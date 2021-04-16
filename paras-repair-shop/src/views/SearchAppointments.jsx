@@ -11,20 +11,24 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
     const [input, setInput] = useState('');
     const [appointmentListDefault, setAppointmentListDefault] = useState();
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:8080/api/appointments/")
-    //         .then(res => {
-    //             let data = res.data;
-    //             setAppointmentList(data);
-    //             setAppointmentListDefault(data);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // }, []);
+    useEffect(() => {
+        axios.get("http://localhost:8080/api/appointments/")
+            .then(res => {
+                let data = res.data;
+                setAppointmentList(data);
+                setAppointmentListDefault(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, []);
+
     const updateInput = (input) => {
-        const filtered = appointments.filter(appoint => {
-            return appoint.email.includes(input) && appoint.serviceComplete === false;
+        let completedAppointments = appointments.filter(appoint => {
+            return appoint.serviceComplete === null;
+        })
+        const filtered = completedAppointments.filter(appoint => {
+            return appoint.email.includes(input);
         })
         setInput(input);
         setAppointmentList(filtered);
@@ -42,6 +46,13 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
                     <AppointmentList appointmentList={appointmentList} selectedId={selectedId} setSelectedId={setSelectedId} />
                 </div> :
                 <></>
+            }
+            {appointments.map((appoint, idx) =>
+                <div key={idx}>
+                    <p>{appoint.firstName}</p>
+                </div>
+            )
+
             }
         </>
     );

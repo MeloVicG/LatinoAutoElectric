@@ -8,7 +8,6 @@ import axios from 'axios';
 
 const AppointmentForm = ({ appointments, setAppointments, }) => {
 
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -18,34 +17,70 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     const [make, setMake] = useState("");
     const [model, setModel] = useState("");
     const [year, setYear] = useState("");
-    const [serviceType, setServiceType] = useState([]);
+    const [serviceTypeArray, setServiceTypeArray] = useState([]);
+    const [serviceType, setServiceType] = useState("");
     const [clientComments, setClientComments] = useState("");
-    const [reason, setReason] = useState("");
-    const [comments, setComments] = useState("");
 
     const [validations, setValidations] = useState([]);
+
+    const [calDate, setCalDate] = useState(new Date());
+    const [filteredAppointments, setFilteredAppointments] = useState([]);
+
+    const [active, setActive] = useState('');
+    const allTimes = ["7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"];
+    const [times, setTimes] = useState(["7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"]);
+
+
+    const calendarChange = (calDate) => {
+        // if (calDate < new Date()) {
+        //     console.log("set validation here!")
+        // } else {
+        setCalDate(calDate);
+        setDate(calDate.toLocaleString().split(",")[0]);
+        console.log("date: " + calDate.toLocaleString().split(",")[0]);
+        let availableTimes = [];
+        let scheduledAppointTimes = [];
+        let appointsOnDate = appointments.filter(appoint => appoint.date === calDate.toLocaleString().split(",")[0]);
+
+        for (let j = 0; j < appointsOnDate.length; j++) {
+            scheduledAppointTimes.push(appointsOnDate[j].time);
+        }
+        for (let i = 0; i < allTimes.length; i++) {
+            if (!scheduledAppointTimes.includes(allTimes[i])) {
+                availableTimes.push(allTimes[i]);
+            }
+        }
+        setTimes(availableTimes);
+    };
+
+    const handleTimeSelect = (time, idx) => {
+        setActive(idx);
+        setTime(time);
+        console.log("time? " + time);
+    }
 
     const addContact = (appointment) => {
         setAppointments([...appointments, appointment])
     }
 
     const handleCheckbox = (e) => {
-        if (serviceType.includes(e.target.value)) {
-            setServiceType(serviceType.filter(checkbox => checkbox !== e.target.value))
+        if (serviceTypeArray.includes(e.target.value)) {
+            setServiceTypeArray(serviceTypeArray.filter(checkbox => checkbox !== e.target.value))
         } else {
-            setServiceType([...serviceType, e.target.value]);
+            setServiceTypeArray([...serviceTypeArray, e.target.value]);
         }
+        let serviceTypeString = "";
+        for (let i = 0; i < serviceTypeArray.length; i++) {
+            if (serviceTypeString === "") {
+                serviceTypeString = serviceTypeArray[i];
+            } else {
+                serviceTypeString = serviceTypeString + ", " + serviceTypeArray[i];
+            }
+        }
+        setServiceType(serviceTypeString);
     }
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        let serviceTypeString = "";
-        serviceType.map(checkbox => {
-            if (serviceTypeString === "") {
-                serviceTypeString = serviceTypeString + checkbox;
-            } else {
-                serviceTypeString = serviceType + ", " + checkbox;
-            }
-        })
         const newContact = {
             firstName,
             lastName,
@@ -56,14 +91,14 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             make,
             model,
             year,
-            serviceTypeString,
+            serviceType,
             clientComments
         }
         axios.post('http://localhost:8080/api/appointments', newContact)
             .then(res => {
                 console.log("axios.post Response: ", res);
                 addContact(res.data)
-                navigate('/dashboard')
+                navigate('/success')
             })
             .catch(err => {
                 console.log(err.response)
@@ -73,45 +108,9 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             })
     }
 
-    const addContact = (appointment) => {
-        setAppointments([...appointments, appointment])
-    }
-
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-
-        const newContact = {
-            firstName,
-            lastName,
-            email,
-            phone,
-            date,
-            time,
-            make,
-            model,
-            year,
-            reason,
-            comments
-        }
-        axios.post('http://localhost:8080/api/appointments', newContact)
-            .then(res => {
-                console.log("axios.post Response: ", res);
-                addContact(res.data)
-                navigate('/dashboard')
-            })
-                .catch(err=>{
-                    console.log(err.response)
-        //             const {errors} = err.response.data;
-        //             const messages = Object.keys(errors).map(error => errors[error].message);
-        //             setErrorMessages(messages);
-                })
-    }
-
-
-
     return (
         <div>
-            <form className={styles.appointmentForm} onSubmit={onSubmitHandler}>
+            <form className={styles.appointmentForm} onSubmit={onSubmitHandler} >
                 {validations.map((message, idx) => <p style={{ color: "red" }} className="err" key={idx}>{message}</p>)}
                 <div className={styles.apFormTop}>
                     <label className={styles.formHeading}>Contact Info:</label>
@@ -150,13 +149,15 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                         <div className={styles.formBalance}>
                             <div >
                                 <label>Select Date:</label>
-                                <Calendar onChange={e => setDate(e.target.value)} />
+                                <Calendar onChange={calendarChange} value={calDate} />
                             </div>
-                            <div>
+                            <div >
                                 <label>Select Time:</label>
-                                <div>
-                                    <input type="text" onChange={e => setTime(e.target.value)} />
-                                </div>
+                                {times.map((time, idx) =>
+                                    <div onClick={e => handleTimeSelect(time, idx)} className={(idx === active ? styles.activeTimeBox : styles.timeBox)} key={idx}>
+                                        <p>{time}</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -184,10 +185,6 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                                 <label>Reason for Visit:</label>
                                 <div className={styles.serviceCheckboxes}>
                                     <div className={styles.serviceType}>
-                                        {/* <select id="vehicle" onChange={e => setMake(e.target.value)}>
-                                            <option value=""></option>
-                                            <option value="Oil Change">Oil Change</option>
-                                        </select>  */}
                                         <div>
                                             <input type="checkbox" name="battery" value="Battery Service" onChange={handleCheckbox} />
                                             <label htmlFor="battery"> Battery Service </label>
@@ -253,7 +250,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             </div>
                             <div className={styles.formComments}>
                                 <label className={styles.formCommentsLeft}>Additional Comments:</label>
-                                <textarea className={styles.formCommentsRight} onChange={e => setTime(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                                <textarea className={styles.formCommentsRight} onChange={e => setClientComments(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
                             </div>
                         </div>
                     </div>
