@@ -136,7 +136,7 @@ exports.deleteAll = (req, res) => {
         });
 };
 
-exports.findAllPublished = (req, res) => {
+exports.findAllByDate = (req, res) => {
     Appointment.findAll({ where: { published: true } })
         .then(data => {
             res.send(data);

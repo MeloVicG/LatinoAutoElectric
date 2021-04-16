@@ -25,20 +25,10 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     const [calDate, setCalDate] = useState(new Date());
     const [filteredAppointments, setFilteredAppointments] = useState([]);
 
-    const [active, setActive] = useState('white');
+    const [active, setActive] = useState('');
     const allTimes = ["7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"];
     const [times, setTimes] = useState(["7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"]);
-    //LEAVE HERE
-    // useEffect(() => {
-    //   axios.get("http://localhost:8080/api/appointments/")
-    //     .then(res => {
-    //       let allAppointments = res.data;
-    //       setAppointments(allAppointments);
-    //     })
-    //     .catch(err => {
-    //       console.log(err);
-    //     })
-    // }, []);
+
 
     const calendarChange = (calDate) => {
         // if (calDate < new Date()) {
@@ -47,23 +37,26 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         setCalDate(calDate);
         setDate(calDate.toLocaleString().split(",")[0]);
         console.log("date: " + calDate.toLocaleString().split(",")[0]);
-        let selectionFilter = [...times];
+        let availableTimes = [];
+        let scheduledAppointTimes = [];
         let appointsOnDate = appointments.filter(appoint => appoint.date === calDate.toLocaleString().split(",")[0]);
-        //Need to loop through times and compare to filtered times. 
-        //If filtered times are included in the selection filter (copy of allTimes); then remove from array.
-        //Update the loop to reflect that.
-        for (let i = 0; i < appointsOnDate.length; i++) {
-            if (!allTimes.includes(appointsOnDate[i].time)) {
-                selectionFilter.push(appointsOnDate[i].time);
+
+        for (let j = 0; j < appointsOnDate.length; j++) {
+            scheduledAppointTimes.push(appointsOnDate[j].time);
+        }
+        for (let i = 0; i < allTimes.length; i++) {
+            if (!scheduledAppointTimes.includes(allTimes[i])) {
+                availableTimes.push(allTimes[i]);
             }
         }
-        for (let j = 0; j < selectionFilter; j++) {
-            console.log(selectionFilter[j]);
-        }
-        setTimes(selectionFilter);
+        setTimes(availableTimes);
     };
 
-
+    const handleTimeSelect = (time, idx) => {
+        setActive(idx);
+        setTime(time);
+        console.log("time? " + time);
+    }
 
     const addContact = (appointment) => {
         setAppointments([...appointments, appointment])
@@ -159,7 +152,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             <div >
                                 <label>Select Time:</label>
                                 {times.map((time, idx) =>
-                                    <div className={styles.timeBox} onClick={e => setTime(time)} key={idx}>
+                                    <div onClick={e => handleTimeSelect(time, idx)} className={(idx === active ? styles.activeTimeBox : styles.timeBox)} key={idx}>
                                         <p>{time}</p>
                                     </div>
                                 )}
