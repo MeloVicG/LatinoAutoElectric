@@ -11,16 +11,18 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
 
     const [showForm, setShowForm] = useState(false);
     const [buttonName, setButtonName] = useState("Add Comments");
+
     useEffect(() => {
         axios.get("http://localhost:8080/api/appointments/" + selectedId)
             .then(res => {
-                let details = res.data;
-                setSelectedAppointment(details);
+                let data = res.data;
+                setSelectedAppointment(data);
             })
             .catch(err => {
                 console.log(err);
             })
     }, []);
+
     let hidden = <></>;
 
     const handleComments = () => {
@@ -78,7 +80,7 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
         <div>
             <h1>Latinos Auto Electric Admin</h1>
             <AdminNavBar />
-            <h1>Appointment {selectedAppointment.serviceComplete}</h1>
+            <h1>Appointment</h1>
             <h3>{selectedAppointment.date} - {selectedAppointment.time}</h3>
             <p>{selectedAppointment.firstName} {selectedAppointment.lastName}</p>
             <p>{selectedAppointment.phone}</p>
