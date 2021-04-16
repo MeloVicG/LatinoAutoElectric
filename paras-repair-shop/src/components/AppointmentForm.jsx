@@ -96,7 +96,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             .then(res => {
                 console.log("axios.post Response: ", res);
                 addContact(res.data)
-                navigate('/dashboard')
+                navigate('/success')
             })
             .catch(err => {
                 console.log(err.response)
@@ -248,7 +248,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             </div>
                             <div className={styles.formComments}>
                                 <label className={styles.formCommentsLeft}>Additional Comments:</label>
-                                <textarea className={styles.formCommentsRight} onChange={e => setTime(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                                <textarea className={styles.formCommentsRight} onChange={e => setClientComments(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
                             </div>
                         </div>
                     </div>

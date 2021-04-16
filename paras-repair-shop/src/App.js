@@ -17,7 +17,7 @@ import ArchivePage from './views/ArchivePage';
 import SearchAppointments from './views/SearchAppointments';
 import UpdateAllFields from './components/UpdateAllFields';
 import UpdateShopComments from './components/UpdateShopComments';
-import SearchBar from './components/SearchBar';
+import SuccessPage from './views/SuccessPage';
 
 
 
@@ -51,6 +51,7 @@ function App() {
           appointments={appointments}
           setAppointments={setAppointments}
         />
+        <SuccessPage path='/success' />
         <AboutPage path="/about" />
         <ServicesPage path="/services" />
         <LocationPage path="/directions" />
