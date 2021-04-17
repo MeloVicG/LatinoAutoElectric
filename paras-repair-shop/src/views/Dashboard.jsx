@@ -27,6 +27,7 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId })
 
   const calendarChange = (calDate) => {
     setCalDate(calDate);
+    //filter is appointments for the day
     let filtered = [];
     appointments.map(appointment => {
       const newCalDateFormat = calDate.toLocaleString().split(",")[0];
