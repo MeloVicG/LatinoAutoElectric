@@ -14,28 +14,28 @@ const FaqPage = () => {
     const [answer4, setAnswer4] = useState("");
     const [answer5, setAnswer5] = useState("");
 
-    const A1 = (e) => {
-        return (
-            <div>
-                <p>Appointments can be made on our <Link to="/schedule">schedule page</Link></p>
-            </div>
-        );
-    };
+    // const A1 = (e) => {
+    //     return (
+    //         <div>
+    //             <p>Appointments can be made on our <Link to="/schedule">schedule page</Link></p>
+    //         </div>
+    //     );
+    // };
 
-    const AA1 = console.log(A1)
+    // const AA1 = console.log(A1)
 
-    const A2 = <p>We are open :
-    <br /> Weekdays 8am - 5pm
-    <br />
-            Saturday 9am - 2pm
-            <br />
-            Sunday Closed
-            </p>;
-    const A3 = <p>Parts are provided at the shop, if you would like to provide the part necessary contact our manager</p>;
+    // const A2 = <p>We are open :
+    // <br /> Weekdays 8am - 5pm
+    // <br />
+    //         Saturday 9am - 2pm
+    //         <br />
+    //         Sunday Closed
+    //         </p>;
+    // const A3 = <p>Parts are provided at the shop, if you would like to provide the part necessary contact our manager</p>;
 
-    const A4 = <p>There may be positions available, contact our manager for futher information</p>;
+    // const A4 = <p>There may be positions available, contact our manager for futher information</p>;
 
-    const A5 = <p>Your car may be left overnight depending on the repairs required</p>;
+    // const A5 = <p>Your car may be left overnight depending on the repairs required</p>;
     // const changeAnswer = (e) => {
     //     setAnswer(e.target.value);
     // }

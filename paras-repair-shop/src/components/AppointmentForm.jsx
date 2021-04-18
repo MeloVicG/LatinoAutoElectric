@@ -91,8 +91,9 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
     const sendEmail = (appointment) => {
         // appointment.preventDefault();
         console.log("sendEmail Function", appointment);
+        console.log(process.env.REACT_APP_SERVICE_KEY);
         //need to hide all IDs
-        emailjs.sendForm('user_bs8X4oulVh50PlPwtUqZ9', 'template_cww6u3m', appointment, 'user_bs8X4oulVh50PlPwtUqZ9')
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY, 'template_cww6u3m', appointment, process.env.REACT_APP_USER_EMAIL_API_KEY)
             .then((result) => {
                 console.log('in sendEmail function', result.text);
             }, (error) => {
@@ -120,7 +121,6 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             .then(res => {
                 console.log("axios.post Response: ", res);
                 addContact(res.data);
-                console.log("addcontact spot");
                 sendEmail(e.target);
                 navigate('/success');
             })
