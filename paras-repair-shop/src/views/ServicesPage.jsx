@@ -1,15 +1,19 @@
-import React, { Static } from 'react';
+import React, { Static, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import styles from '../styles/ServicesPage.module.scss';
 import Footer from '../components/Footer';
 
 
-const ServicesPage = () => {
+const ServicesPage = ({page, setPage}) => {
+
+    useEffect(() => {
+        setPage(2)
+    }, []);
 
     return (
         <div className="wrapper">
             <h1 className={styles.titleBox} >Latinos Auto Electric</h1>
-            <NavBar/>
+            <NavBar page={page}/>
             <div className={styles.banner}>
                 <h1>Services</h1>
                 <div className={styles.categories}>

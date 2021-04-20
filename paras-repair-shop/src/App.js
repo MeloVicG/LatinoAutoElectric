@@ -29,7 +29,7 @@ function App() {
   const [mechanicComments, setMechanicComments] = useState("");
   const [appointmentList, setAppointmentList] = useState([]);
 
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState(0);
 
 
   //if this works, need to move this to dashboard for when you first reach the admin stuff.
@@ -43,6 +43,7 @@ function App() {
         console.log(err);
       })
   }, []);
+  
 
   return (
     <div className="App">

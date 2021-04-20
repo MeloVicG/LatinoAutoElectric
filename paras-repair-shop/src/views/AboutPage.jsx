@@ -1,4 +1,4 @@
-// import React, {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import NavBar from '../components/NavBar';
 import styles from '../styles/AboutPage.module.scss';
 import camaro from '../static/images/camaro.jpg';
@@ -10,12 +10,16 @@ import mechanic from '../static/images/wrenchGuy.jpg'
 import specialist from '../static/images/salesMan.jpg'
 
 
-const AboutPage = () => {
+const AboutPage = ({page,setPage}) => {
+
+    useEffect(() => {
+        setPage(3)
+    }, []);
 
     return (
         <div className="wrapper">
             <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
-            <NavBar/>
+            <NavBar page={page}/>
             <div className={styles.banner}>
                 <h1>About Us</h1>
                 <p>My parents began this repair shop back in XXXX. Our family has be serving the community for over XX years through our passion for everything automotive. We love working on vehicles of all types and helping out our community by fixing any kind of vehicle issue.</p>

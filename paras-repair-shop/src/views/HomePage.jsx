@@ -15,7 +15,7 @@ import Services from '../static/images/repairService.jpg'
 const HomePage = ({page, setPage}) => {
 
     useEffect(() => {
-        setPage("Home")
+        setPage(0)
     }, []);
 
     return (
