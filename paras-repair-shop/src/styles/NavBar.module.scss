@@ -1,0 +1,37 @@
+.activeNavBox {
+    background-color: blue;
+}
+
+.navBox {
+    
+    display: inline-block;
+    color: black;
+    font-size: 25px;
+    // padding: 5px 20px;
+    margin: 0px 15px;
+    font-weight: bold;
+    padding: 5px 15px 0px 15px;
+    &:hover {
+        // font-size: 23px;
+        text-shadow: 1px 1px black;
+        background-color: aliceblue;
+        // margin: 0px 15px;
+        padding: 4px 15px 0px 15px; 
+        border: aqua 1px solid;
+    }
+}
+
+// color: black;
+//     // display: inline;
+//     font-size: 20px;
+//     padding: 5px;
+//     font-weight: bold;
+//     margin: 25px;
+//     &:hover {
+//         // font-size: 23px;
+//         text-shadow: 1px 1px black;
+//         background-color: aliceblue;
+//         padding: 9px 5px;
+//         border: aqua 1px solid;
+//         // cursor: pointer;
+//     }

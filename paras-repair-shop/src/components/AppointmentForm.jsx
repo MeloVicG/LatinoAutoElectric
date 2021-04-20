@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { navigate } from '@reach/router'
+import { navigate } from '@reach/router';
 import styles from '../styles/AppointmentForm.module.scss';
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import axios from 'axios';
+
+import emailjs from 'emailjs-com';
+import{ init } from 'emailjs-com';
 
 
 const AppointmentForm = ({ appointments, setAppointments, }) => {
@@ -59,18 +62,22 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         setActive(idx);
         setTime(time);
         console.log("time? " + time);
-    }
+    };
 
     const addContact = (appointment) => {
         setAppointments([...appointments, appointment])
-    }
+    };
 
     const handleCheckbox = (e) => {
         if (serviceTypeArray.includes(e.target.value)) {
             setServiceTypeArray(serviceTypeArray.filter(checkbox => checkbox !== e.target.value))
+            console.log("off", e.target.value);
         } else {
             setServiceTypeArray([...serviceTypeArray, e.target.value]);
-        }
+            console.log("on", e.target.value);
+        };
+
+        //
         let serviceTypeString = "";
         for (let i = 0; i < serviceTypeArray.length; i++) {
             if (serviceTypeString === "") {
@@ -81,6 +88,22 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         }
         setServiceType(serviceTypeString);
     }
+
+    //uses HTML names attribute
+    const sendEmail = (appointment) => {
+        // appointment.preventDefault();
+        console.log("sendEmail Function", appointment);
+        console.log(process.env.REACT_APP_SERVICE_KEY);
+        //need to hide all IDs
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY, 'template_cww6u3m', appointment, process.env.REACT_APP_USER_EMAIL_API_KEY)
+            .then((result) => {
+                console.log('in sendEmail function', result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
+
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const newContact = {
@@ -95,20 +118,21 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             year,
             serviceType,
             clientComments
-        }
+        };
         axios.post('http://localhost:8080/api/appointments', newContact)
             .then(res => {
                 console.log("axios.post Response: ", res);
-                addContact(res.data)
-                navigate('/success')
+                addContact(res.data);
+                sendEmail(e.target);
+                navigate('/success');
             })
             .catch(err => {
                 console.log(err.response)
                 //             const {errors} = err.response.data;
                 //             const messages = Object.keys(errors).map(error => errors[error].message);
                 //             setErrorMessages(messages);
-            })
-    }
+            });
+    };
 
     return (
         <div>
@@ -119,15 +143,15 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                     <div className={styles.formSection}>
                         <div className={styles.formRow}>
                             <div className={styles.formGroup}>
-                                <label>First Name:</label>
+                                <label>First Name: </label>
                                 <div>
-                                    <input type="text" onChange={e => setFirstName(e.target.value)} />
+                                    <input type="text" name="firstName" onChange={e => setFirstName(e.target.value)} />
                                 </div>
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Last Name:</label>
                                 <div>
-                                    <input type="text" onChange={e => setLastName(e.target.value)} />
+                                    <input type="text" name="lastName" onChange={e => setLastName(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -135,13 +159,13 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             <div className={styles.formGroup}>
                                 <label>Email:</label>
                                 <div>
-                                    <input type="email" onChange={e => setEmail(e.target.value)} />
+                                    <input type="email" name="email" onChange={e => setEmail(e.target.value)} />
                                 </div>
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Phone Number:</label>
                                 <div>
-                                    <input type="text" onChange={e => setPhone(e.target.value)} />
+                                    <input type="text" name="phoneNumber" onChange={e => setPhone(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -151,13 +175,15 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                         <div className={styles.formBalance}>
                             <div >
                                 <label>Select Date:</label>
-                                <Calendar onChange={calendarChange} value={calDate} />
+                                <Calendar onChange={calendarChange} name="date" value={calDate} />
+                                <input type="hidden" name="formatDate" value={date}/>
                             </div>
                             <div >
                                 <label>Select Time:</label>
                                 {times.map((time, idx) =>
                                     <div onClick={e => handleTimeSelect(time, idx)} className={(idx === active ? styles.activeTimeBox : styles.timeBox)} key={idx}>
                                         <p>{time}</p>
+                                        <input type="hidden" name={(idx === active ? "time": "timeOption")} value={time}/>
                                     </div>
                                 )}
                             </div>
@@ -168,15 +194,15 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                         <div className={styles.formBalance}>
                             <div className={styles.formGroup}>
                                 <label>Make:</label>
-                                <input type="text" onChange={e => setMake(e.target.value)} />
+                                <input type="text" name="make" onChange={e => setMake(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Model:</label>
-                                <input type="text" onChange={e => setModel(e.target.value)} />
+                                <input type="text" name="model" onChange={e => setModel(e.target.value)} />
                             </div>
                             <div className={styles.formGroup}>
                                 <label> Year:</label>
-                                <input type="number" onChange={e => setYear(e.target.value)} />
+                                <input type="number" name="year" onChange={e => setYear(e.target.value)} />
                             </div>
                         </div>
                     </div>
@@ -186,7 +212,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             <div >
                                 <label>Reason for Visit:</label>
                                 <div className={styles.serviceCheckboxes}>
-                                    <div className={styles.serviceType}>
+                                    <div className={styles.serviceType} >
                                         <div>
                                             <input type="checkbox" name="battery" value="Battery Service" onChange={handleCheckbox} />
                                             <label htmlFor="battery"> Battery Service </label>
@@ -252,7 +278,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             </div>
                             <div className={styles.formComments}>
                                 <label className={styles.formCommentsLeft}>Additional Comments:</label>
-                                <textarea className={styles.formCommentsRight} onChange={e => setClientComments(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
+                                <textarea className={styles.formCommentsRight} name="comments" onChange={e => setClientComments(e.target.value)} col="100" row="30" placeholder="Please fill in any information that was listed as other here."></textarea>
                             </div>
                         </div>
                     </div>
