@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { navigate } from '@reach/router'
+import { navigate } from '@reach/router';
 import styles from '../styles/AppointmentForm.module.scss';
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import axios from 'axios';
 
-import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
 
 
@@ -60,11 +60,11 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         setActive(idx);
         setTime(time);
         console.log("time? " + time);
-    }
+    };
 
     const addContact = (appointment) => {
         setAppointments([...appointments, appointment])
-    }
+    };
 
     const handleCheckbox = (e) => {
         if (serviceTypeArray.includes(e.target.value)) {
@@ -73,7 +73,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         } else {
             setServiceTypeArray([...serviceTypeArray, e.target.value]);
             console.log("on", e.target.value);
-        }
+        };
 
         //
         let serviceTypeString = "";
@@ -116,7 +116,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             year,
             serviceType,
             clientComments
-        }
+        };
         axios.post('http://localhost:8080/api/appointments', newContact)
             .then(res => {
                 console.log("axios.post Response: ", res);
@@ -129,8 +129,8 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                 //             const {errors} = err.response.data;
                 //             const messages = Object.keys(errors).map(error => errors[error].message);
                 //             setErrorMessages(messages);
-            })
-    }
+            });
+    };
 
     return (
         <div>
@@ -174,12 +174,14 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             <div >
                                 <label>Select Date:</label>
                                 <Calendar onChange={calendarChange} name="date" value={calDate} />
+                                <input type="hidden" name="formatDate" value={date}/>
                             </div>
                             <div >
                                 <label>Select Time:</label>
                                 {times.map((time, idx) =>
-                                    <div onClick={e => handleTimeSelect(time, idx)} name="time" className={(idx === active ? styles.activeTimeBox : styles.timeBox)} key={idx}>
+                                    <div onClick={e => handleTimeSelect(time, idx)} className={(idx === active ? styles.activeTimeBox : styles.timeBox)} key={idx}>
                                         <p>{time}</p>
+                                        <input type="hidden" name={(idx === active ? "time": "timeOption")} value={time}/>
                                     </div>
                                 )}
                             </div>
