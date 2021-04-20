@@ -6,7 +6,7 @@ import 'react-calendar/dist/Calendar.css';
 import axios from 'axios';
 
 import emailjs from 'emailjs-com';
-import{ init } from 'emailjs-com';
+import { init } from 'emailjs-com';
 
 
 const AppointmentForm = ({ appointments, setAppointments, }) => {
@@ -176,14 +176,14 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
                             <div >
                                 <label>Select Date:</label>
                                 <Calendar onChange={calendarChange} name="date" value={calDate} />
-                                <input type="hidden" name="formatDate" value={date}/>
+                                <input type="hidden" name="formatDate" value={date} />
                             </div>
                             <div >
                                 <label>Select Time:</label>
                                 {times.map((time, idx) =>
                                     <div onClick={e => handleTimeSelect(time, idx)} className={(idx === active ? styles.activeTimeBox : styles.timeBox)} key={idx}>
                                         <p>{time}</p>
-                                        <input type="hidden" name={(idx === active ? "time": "timeOption")} value={time}/>
+                                        <input type="hidden" name={(idx === active ? "time" : "timeOption")} value={time} />
                                     </div>
                                 )}
                             </div>

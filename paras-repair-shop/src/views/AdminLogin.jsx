@@ -22,7 +22,6 @@ const AdminLogin = () => {
             .catch(err => {
                 console.log(err);
             })
-        return res.data;
     }
 
     return (

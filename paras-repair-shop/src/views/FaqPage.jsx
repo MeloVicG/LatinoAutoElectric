@@ -5,59 +5,85 @@ import styles from '../styles/FaqPage.module.scss'
 import Footer from '../components/Footer'
 import { Link } from '@reach/router';
 
-const FaqPage = ({page, setPage}) => {
-    
+const FaqPage = ({ page, setPage }) => {
+
 
     const [answer, setAnswer] = useState("");
-    const [answer1, setAnswer1] = useState("");
-    const [answer2, setAnswer2] = useState("");
-    const [answer3, setAnswer3] = useState("");
-    const [answer4, setAnswer4] = useState("");
-    const [answer5, setAnswer5] = useState("");
+    const [finalAnswers, setFinalAnswers] = useState([]);
+
+    const answerBank = [
+        {
+            "a": "0",
+            "text": "Appointments can be made on our Schedule Page"
+        },
+        {
+            "a": "1",
+            "text": "We are open :",
+            "text1": "Weekdays 8am - 5pm,",
+            "text2": "Saturday 9am - 2pm,",
+            "text3": "Sunday Closed",
+        },
+        {
+            "a": "2",
+            "text": "Parts are provided at the shop, if you would like to provide the part necessary contact our manager",
+        },
+        {
+            "a": "3",
+            "text": "There may be positions available, contact our manager for further information"
+        },
+        {
+            "a": "4",
+            "text": "Your car may be left overnight depending on the repairs required"
+        },
+    ]
 
     useEffect(() => {
-        setPage(4)
+        setPage(4);
     }, []);
+
+    const handleAnswer = (e) => {
+        setAnswer(e.target.value);
+        let newAnswers = [];
+        answerBank.map((obj) => {
+            if (obj["a"] === e.target.value) {
+                Object.keys(obj).forEach(key => {
+                    if (key !== "a") {
+                        newAnswers.push(obj[key]);
+                    }
+                })
+            }
+        })
+        setFinalAnswers(newAnswers);
+    }
 
 
     return (
         <div className="wrapper">
             <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
-            <NavBar page={page}/>
+            <NavBar page={page} />
             <div className={styles.container}>
                 <div className={styles.faqBanner}>
 
                     <div>
                         <h1>FAQ</h1>
                         <br />
-                        <select value={answer} className="dropDownQuestions" type="text" onChange={(e) => setAnswer(e.target.value)}>
+                        <select value={answer} className="dropDownQuestions" type="text" onChange={handleAnswer}>
                             <h4>Questions?</h4>
                             <option value="">Questions?</option>
-                            <option value="Appointments can be made on our Schedule Page">Where can I make an appointment?</option>
-                            <option value="We are open :
-                                Weekdays 8am - 5pm,
-                                Saturday 9am - 2pm,
-                                Sunday Closed">
-                                When does the shop open?</option>
-                            <option value="Parts are provided at the shop, if you would like to provide the part necessary contact our manager">Do I need to buy parts?</option>
-                            <option value="There may be positions available, contact our manager for futher information">Is there positions available?</option>
-                            <option value="Your car may be left overnight depending on the repairs required">Do I have to leave my car overnight?</option>
+                            <option value="0">Where can I make an appointment?</option>
+                            <option value="1">When does the shop open?</option>
+                            <option value="2">Do I need to buy parts?</option>
+                            <option value="3">Is there positions available?</option>
+                            <option value="4">Do I have to leave my car overnight?</option>
                         </select>
                         <br />
                         <br />
-                        <p>{answer}</p>
-                        {/* 
-                        {answer.map((val, index) =>
-                            <div key={index}>
-                                <h3>{val.A2}</h3>
+                        {finalAnswers.map((str, idx) =>
+                            <div key={idx}>
+                                <p>{str}</p>
                             </div>
-                        )} */}
-                        {/* {AA1} */}
-                        {/* {A1}
-                        {A2}
-                        {A3}
-                        {A4}
-                        {A5} */}
+                        )
+                        }
                     </div>
 
 
