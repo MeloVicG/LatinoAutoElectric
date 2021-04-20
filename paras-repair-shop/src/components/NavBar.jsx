@@ -21,11 +21,6 @@ const NavBar = ({page, setPage}) => {
         console.log("bar? " + bar);
     };
 
-    // useEffect(() => {
-    //     if (page==idx){
-
-    //     } 
-    // }, []);
 
     return (
         <div className="navBarParent">
@@ -37,10 +32,6 @@ const NavBar = ({page, setPage}) => {
                     </div>
                 )}
             </nav>
-
-            <div className="activeNavBox">
-                    <p>{page}</p>
-            </div>
 
                 {/* <Link to="/" style={{textDecoration:"none"}}>Home</Link>  */}
                 {/* <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link>  */}

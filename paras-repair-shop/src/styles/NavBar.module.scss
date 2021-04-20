@@ -1,5 +1,13 @@
 .activeNavBox {
-    background-color: blue;
+    display: inline-block;
+    color: black;
+    font-size: 25px;
+    // padding: 5px 20px;
+    margin: 0px 15px;
+    font-weight: bold;
+    padding: 5px 15px 0px 15px;
+    background-color: aliceblue;
+    border: aqua 1px solid;
 }
 
 .navBox {
