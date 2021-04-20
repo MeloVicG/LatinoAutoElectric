@@ -12,7 +12,11 @@ import Services from '../static/images/repairService.jpg'
 
 
 
-const HomePage = () => {
+const HomePage = ({page, setPage}) => {
+
+    useEffect(() => {
+        setPage("Home")
+    }, []);
 
     return (
         <div className={styles.App}>
@@ -20,12 +24,12 @@ const HomePage = () => {
                 <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
 
                 {/* has css */}
-                {/* <NavBar /> */}
-                <Link className="currentNav" to="/" style={{textDecoration:"none"}}>Home</Link>,
+                <NavBar page={page}/>
+                {/* <Link className="currentNav" to="/" style={{textDecoration:"none"}}>Home</Link>,
                 <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link>,
                 <Link to="/services" style={{textDecoration:"none"}}>Services</Link>,
                 <Link to="/about" style={{textDecoration:"none"}}>About</Link>,
-                <Link to="/faq" style={{textDecoration:"none"}}>FAQ</Link>
+                <Link to="/faq" style={{textDecoration:"none"}}>FAQ</Link> */}
                 <div className={styles.container}>
                     <div className={styles.containerTop}>
                         <div className={styles.homeTopSection}>

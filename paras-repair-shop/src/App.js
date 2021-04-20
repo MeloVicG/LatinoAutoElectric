@@ -29,6 +29,8 @@ function App() {
   const [mechanicComments, setMechanicComments] = useState("");
   const [appointmentList, setAppointmentList] = useState([]);
 
+  const [page, setPage] = useState("");
+
 
   //if this works, need to move this to dashboard for when you first reach the admin stuff.
   useEffect(() => {
@@ -45,19 +47,20 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <HomePage path="/" />
+        <HomePage path="/" page={page} setPage={setPage} />
         <AppointmentPage
           path="/schedule"
           appointments={appointments}
           setAppointments={setAppointments}
+          page={page} setPage={setPage}
         />
         <SuccessPage path='/success' />
-        <AboutPage path="/about" />
-        <ServicesPage path="/services" />
+        <AboutPage path="/about" page={page} setPage={setPage} />
+        <ServicesPage path="/services" page={page} setPage={setPage}/>
         <LocationPage path="/directions" />
         <ContactPage path="/contact" />
         <ReviewPage path="/reviews" />
-        <FaqPage path="/faq" />
+        <FaqPage path="/faq" page={page} setPage={setPage}/>
         <AdminLogin path="/admin" />
         <Dashboard
           path="/dashboard"

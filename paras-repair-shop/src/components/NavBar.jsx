@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 // import CarLogo from '../components/CarLogo'
 
 import styles from '../styles/NavBar.module.scss'
 
-const NavBar = () => {
+const NavBar = ({page, setPage}) => {
 
     const [navigation, setNavigation] = useState([
         <Link className="activeNavBox" to="/" style={{textDecoration:"none"}}>Home</Link>,
@@ -21,16 +21,26 @@ const NavBar = () => {
         console.log("bar? " + bar);
     };
 
+    // useEffect(() => {
+    //     if (page==idx){
+
+    //     } 
+    // }, []);
+
     return (
         <div className="navBarParent">
             <nav className="navBar">
-            {navigation.map((bar, idx) =>
-            //when choosing another navbox, page refreshes therfore does not highlight background?
-                <div onChange={e => handleNavSelect(bar, idx)} className={(idx === activeNav ? styles.activeNavBox : styles.navBox)} key={idx}>
-                    <p>{bar}</p>
-                </div>
-            )}
+                {navigation.map((bar, idx) =>
+                //when choosing another navbox, page refreshes therfore does not highlight background?
+                    <div onChange={e => handleNavSelect(bar, idx)} className={(idx === page ? styles.activeNavBox : styles.navBox)} key={idx}>
+                        <p>{bar}</p>
+                    </div>
+                )}
             </nav>
+
+            <div className="activeNavBox">
+                    <p>{page}</p>
+            </div>
 
                 {/* <Link to="/" style={{textDecoration:"none"}}>Home</Link>  */}
                 {/* <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link>  */}
