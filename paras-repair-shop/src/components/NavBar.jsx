@@ -6,6 +6,7 @@ import styles from '../styles/NavBar.module.scss'
 
 const NavBar = () => {
 
+
     const [navigation, setNavigation] = useState([
         <Link className="activeNavBox" to="/" style={{textDecoration:"none"}}>Home</Link>,
         <Link to="/schedule" style={{textDecoration:"none"}}>Schedule</Link>,

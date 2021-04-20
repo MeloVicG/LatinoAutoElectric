@@ -40,14 +40,16 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         // } else {
         setCalDate(calDate);
         setDate(calDate.toLocaleString().split(",")[0]);
-        console.log("date: " + calDate.toLocaleString().split(",")[0]);
         let availableTimes = [];
         let scheduledAppointTimes = [];
         let appointsOnDate = appointments.filter(appoint => appoint.date === calDate.toLocaleString().split(",")[0]);
 
+        // loops through and takes the times that are scheduled and places just the times in an array
         for (let j = 0; j < appointsOnDate.length; j++) {
             scheduledAppointTimes.push(appointsOnDate[j].time);
         }
+
+        // loops through all times and searches for times not scheduled and pushes them into availableTimes array
         for (let i = 0; i < allTimes.length; i++) {
             if (!scheduledAppointTimes.includes(allTimes[i])) {
                 availableTimes.push(allTimes[i]);
