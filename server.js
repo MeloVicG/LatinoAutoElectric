@@ -15,6 +15,9 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 // Express body parser
+
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));

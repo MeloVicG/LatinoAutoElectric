@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import styles from './Footer.module.scss';
+import styles from '../styles/Footer.module.scss';
 import facebook from '../static/images/facebook.png'
 import instagram from '../static/images/instagram.png'
 
@@ -15,8 +15,12 @@ const Footer = () => {
                         <p>Spence Huyck</p>
                 </div>
                 <div>
-                    made with:
-                        MERN
+                    <p>made with:
+                    MySql / Sequelize,
+                    Express,
+                    React,
+                    NodeJS,
+                    SaSS</p>
                 </div>
             </footer>
     )
