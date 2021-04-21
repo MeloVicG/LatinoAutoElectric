@@ -43,7 +43,7 @@ function App() {
         console.log(err);
       })
   }, []);
-  
+
 
   return (
     <div className="App">
@@ -53,15 +53,16 @@ function App() {
           path="/schedule"
           appointments={appointments}
           setAppointments={setAppointments}
-          page={page} setPage={setPage}
+          page={page}
+          setPage={setPage}
         />
         <SuccessPage path='/success' />
         <AboutPage path="/about" page={page} setPage={setPage} />
-        <ServicesPage path="/services" page={page} setPage={setPage}/>
+        <ServicesPage path="/services" page={page} setPage={setPage} />
         <LocationPage path="/directions" />
         <ContactPage path="/contact" />
         <ReviewPage path="/reviews" />
-        <FaqPage path="/faq" page={page} setPage={setPage}/>
+        <FaqPage path="/faq" page={page} setPage={setPage} />
         <AdminLogin path="/admin" />
         <Dashboard
           path="/dashboard"
@@ -69,6 +70,8 @@ function App() {
           setAppointments={setAppointments}
           selectedId={selectedId}
           setSelectedId={setSelectedId}
+          page={page}
+          setPage={setPage}
         />
         <AppointmentDetailsPage
           path="/appointment-details"
@@ -95,6 +98,8 @@ function App() {
           setSelectedId={setSelectedId}
           appointmentList={appointmentList}
           setAppointmentList={setAppointmentList}
+          page={page}
+          setPage={setPage}
         />
         <ArchivePage
           path="/archive"
@@ -104,6 +109,8 @@ function App() {
           setSelectedId={setSelectedId}
           appointmentList={appointmentList}
           setAppointmentList={setAppointmentList}
+          page={page}
+          setPage={setPage}
         />
       </Router>
     </div >

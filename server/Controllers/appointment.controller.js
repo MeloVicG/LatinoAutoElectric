@@ -31,12 +31,13 @@ exports.create = (req, res) => {
     // Save Appointment in the database
     Appointment.create(appointment)
         .then(data => {
+            console.log("In the create method");
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Appointment."
+                    "Some error occurred while creating the Appointment."
             });
         });
 };

@@ -7,14 +7,18 @@ import styles from '../styles/SearchDisplay.module.scss';
 
 
 
-const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId, appointmentList, setAppointmentList }) => {
+const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId, appointmentList, setAppointmentList, page, setPage }) => {
     const [input, setInput] = useState('');
     const [appointmentListDefault, setAppointmentListDefault] = useState();
+
+    useEffect(() => {
+        setPage(2);
+    }, []);
 
     const updateInput = (input) => {
         console.log("appointments: " + appointments);
         let completedAppointments = appointments.filter(appoint => {
-            return appoint.serviceComplete !== null;
+            return appoint.serviceComplete === true;
         })
         const filtered = completedAppointments.filter(appoint => {
             return appoint.email.includes(input);
@@ -27,7 +31,7 @@ const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId,
     return (
         <>
             <h1>Latinos Auto Electric Admin</h1>
-            <AdminNavBar />
+            <AdminNavBar page={page} />
             <h1>Archived Appointments</h1>
             <SearchBar input={input} updateInput={updateInput} onChange={updateInput} />
             {input.length > 0 ?

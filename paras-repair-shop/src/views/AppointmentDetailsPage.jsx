@@ -56,6 +56,14 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
                 // setValidations([...validations, messages])
                 // setValidations(messages)
             })
+        axios.get("http://localhost:8080/api/appointments/" + selectedId)
+            .then(res => {
+                let data = res.data;
+                setSelectedAppointment(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     const removeAppointment = (appointmentId) => {

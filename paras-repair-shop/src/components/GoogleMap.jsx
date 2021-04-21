@@ -8,6 +8,7 @@ const MapContainer = () => {
 
     return (
         <div>
+
             {/* <img src={GoogleMap} alt="map"/> */}
             <iframe width="600"
                 title="Location Map Frame"
