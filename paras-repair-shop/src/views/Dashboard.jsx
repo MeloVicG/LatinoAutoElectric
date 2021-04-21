@@ -47,6 +47,7 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId, p
   return (
     <div>
       <h1>Latinos Auto Electric Admin</h1>
+      <Link to="/" style={{backgroundColor:"purple", marginLeft:"1500px"}}>Back Home</Link>
       <AdminNavBar page={page} />
       <h1 className={styles.title}>Calendar</h1>
       <div className={styles.calendarContainer}>
