@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import axios from 'axios';
 
-
+//incase of selling website create legal document
+//disclaimer current not in use of business
 const AddAdmin = () => {
 
     const [admins, setAdmins] = useState([]);
@@ -10,36 +11,28 @@ const AddAdmin = () => {
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [confirm, setConfirm] = useState("");
-    const [securityController, setSecurityController] = useState(false);
-
-
-    useEffect(() => {
-        axios.get("http://localhost:8080/api/admin/")
-            .then(res => {
-                let allAdmins = res.data;
-                setAdmins(allAdmins);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }, []);
-
+    // const [securityController, setSecurityController] = useState(false);
+    const [roles, setRoles] = useState(["admin"]);
 
     const handleNewAdmin = (e) => {
         e.preventDefault();
+        console.log("handle admin part ");
         const newAdmin = {
             firstName,
             lastName,
+            email,
             username,
             password,
-            confirm,
-            securityController,
+            // confirm,
+            // securityController,
+            roles,
         }
-        axios.post('http://localhost:8080/api/admin/register', newContact)
-            .then(res => {
-                console.log("axios.post Response: ", res);
-                setAdmins([...admins, res.data])
+        axios.post('http://localhost:8080/api/auth/signup', newAdmin)
+        .then(res => {
+                navigate('/admin')
+                // setAdmins([...admins, res.data])
             })
             .catch(err => {
                 console.log(err.response)
@@ -48,13 +41,13 @@ const AddAdmin = () => {
                 //             setErrorMessages(messages);
             })
     }
-    const handleCheckbox = (e) => {
-        if (securityController === true) {
-            setSecurityController(false);
-        } else {
-            setSecurityController(true);
-        }
-    }
+    // const handleCheckbox = (e) => {
+    //     if (securityController === true) {
+    //         setSecurityController(false);
+    //     } else {
+    //         setSecurityController(true);
+    //     }
+    // }
 
     return (
         <div>
@@ -64,14 +57,16 @@ const AddAdmin = () => {
                 <input type="text" onChange={(e) => { setFirstName(e.target.value) }} />
                 <label>Last Name</label>
                 <input type="text" onChange={(e) => { setLastName(e.target.value) }} />
+                <label>Email</label>
+                <input type="text" onChange={(e) => { setEmail(e.target.value) }} />
                 <label>Username</label>
                 <input type="text" onChange={(e) => { setUsername(e.target.value) }} />
                 <label>Password</label>
-                <input type="text" onChange={(e) => { setPassword(e.target.value) }} />
-                <label>Confirm Password</label>
-                <input type="text" onChange={(e) => { setConfirm(e.target.value) }} />
-                <label>Security Controller</label>
-                <input type="checkbox" value="true" onChange={handleCheckbox} />
+                <input type="password" onChange={(e) => { setPassword(e.target.value) }} />
+                {/* <label>Confirm Password</label>
+                <input type="text" onChange={(e) => { setConfirm(e.target.value) }} /> */}
+                {/* <label>Security Controller</label> */}
+                {/* <input type="checkbox" value="true" onChange={handleCheckbox} /> */}
                 <input type="submit" value="Add Admin" />
             </form>
         </div>

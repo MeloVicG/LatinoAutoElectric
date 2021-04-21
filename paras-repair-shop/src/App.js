@@ -18,6 +18,7 @@ import SearchAppointments from './views/SearchAppointments';
 import UpdateAllFields from './components/UpdateAllFields';
 import UpdateShopComments from './components/UpdateShopComments';
 import SuccessPage from './views/SuccessPage';
+import AddAdmin from './views/AddAdmin';
 
 
 
@@ -112,6 +113,7 @@ function App() {
           page={page}
           setPage={setPage}
         />
+        <AddAdmin path="/register-admin"/>
       </Router>
     </div >
   );

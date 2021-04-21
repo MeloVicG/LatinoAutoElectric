@@ -11,8 +11,8 @@ const Footer = () => {
                 <img className={styles.instagram}src={instagram} alt="instagram_logo"/>
                 <div>
                     <p>made by:</p>
-                        <p>Victor Gargurevich</p>
-                        <p>Spence Huyck</p>
+                        <p>Victor</p>
+                        <p>Spence</p>
                 </div>
                 <div>
                     <p>made with:
@@ -21,6 +21,8 @@ const Footer = () => {
                     React,
                     NodeJS,
                     SaSS</p>
+
+                    <h4>disclaimer currently not in use of business</h4>
                 </div>
             </footer>
     )
