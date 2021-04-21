@@ -35,7 +35,7 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
             return appoint.serviceComplete !== true;
         })
         const filtered = completedAppointments.filter(appoint => {
-            return appoint.email.includes(input);
+            return appoint.lastName.includes(input);
         })
         setInput(input);
         setAppointmentList(filtered);

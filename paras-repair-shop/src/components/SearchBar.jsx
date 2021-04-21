@@ -9,7 +9,7 @@ const SearchBar = ({ input, updateInput }) => {
                 style={BarStyling}
                 key="random1"
                 value={input}
-                placeholder={"search by email"}
+                placeholder={"search by last name"}
                 onChange={(e) => updateInput(e.target.value)}
             />
         </>
