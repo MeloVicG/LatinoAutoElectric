@@ -37,7 +37,7 @@ const AdminLogin = () => {
                     </div>
                     <div className={styles.loginBlock}>
                         <label>Password: </label>
-                        <input type="text" onChange={(e) => { setPassword(e.target.value) }} />
+                        <input type="password" onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
                     <input id={styles.loginButton} type="submit" value="Login" />
                 </div>
