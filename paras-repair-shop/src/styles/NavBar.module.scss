@@ -1,45 +1,48 @@
 .activeNavBox {
-    display: inline-block;
-    color: black;
-    font-size: 25px;
-    // padding: 5px 20px;
-    margin: 0px 15px;
-    font-weight: bold;
-    padding: 5px 15px 0px 15px;
-    background-color: aliceblue;
-    border: aqua 1px solid;
+  display: inline-block;
+  color: black;
+  font-size: 25px;
+  // padding: 5px 20px;
+  margin: 0px 15px;
+  font-weight: bold;
+  padding: 5px 15px 0px 15px;
+  background-color: aliceblue;
+  border: aqua 1px solid;
 }
 
 .navBox {
-    
-    display: inline-block;
-    color: black;
-    font-size: 25px;
-    // padding: 5px 20px;
-    margin: 0px 15px;
-    font-weight: bold;
-    padding: 5px 15px 0px 15px;
-    &:hover {
-        // font-size: 23px;
-        text-shadow: 1px 1px black;
-        background-color: aliceblue;
-        // margin: 0px 15px;
-        padding: 4px 15px 0px 15px; 
-        border: aqua 1px solid;
-    }
+  display: inline-block;
+  color: black;
+  font-size: 25px;
+  // padding: 5px 20px;
+  margin: 0px 15px;
+  font-weight: bold;
+  padding: 5px 15px 0px 15px;
+  &:hover {
+    // font-size: 23px;
+    text-shadow: 1px 1px black;
+    background-color: aliceblue;
+    // margin: 0px 15px;
+    padding: 4px 15px 0px 15px;
+    border: aqua 1px solid;
+  }
 }
 
-// color: black;
-//     // display: inline;
-//     font-size: 20px;
-//     padding: 5px;
-//     font-weight: bold;
-//     margin: 25px;
-//     &:hover {
-//         // font-size: 23px;
-//         text-shadow: 1px 1px black;
-//         background-color: aliceblue;
-//         padding: 9px 5px;
-//         border: aqua 1px solid;
-//         // cursor: pointer;
-//     }
+.logoutWrapper {
+  width: 80%;
+  text-align: right;
+}
+
+.logout {
+  margin-top: 2%;
+  margin-bottom: 1%;
+  background-color: white;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 10px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    background-color: #dc3545;
+  }
+}

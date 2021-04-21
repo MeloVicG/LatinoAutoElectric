@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { navigate } from '@reach/router';
 import AppointmentList from '../components/AppointmentList';
 import AdminNavBar from '../components/AdminNavBar';
 import SearchBar from '../components/SearchBar';
@@ -10,9 +11,14 @@ import styles from '../styles/SearchDisplay.module.scss';
 const ArchivePage = ({ appointments, setAppointments, selectedId, setSelectedId, appointmentList, setAppointmentList, page, setPage }) => {
     const [input, setInput] = useState('');
     const [appointmentListDefault, setAppointmentListDefault] = useState();
+    const user = JSON.parse(localStorage.getItem('user'));
 
     useEffect(() => {
-        setPage(2);
+        if (user && user.accessToken) {
+            setPage(2);
+        } else {
+            navigate("/admin");
+        }
     }, []);
 
     const updateInput = (input) => {

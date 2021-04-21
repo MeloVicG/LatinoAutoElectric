@@ -14,16 +14,23 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId, p
   const [calDate, setCalDate] = useState(new Date());
   const [filteredAppointments, setFilteredAppointments] = useState([]);
 
+  const user = JSON.parse(localStorage.getItem('user'));
+
   useEffect(() => {
-    axios.get("http://localhost:8080/api/appointments/")
-      .then(res => {
-        let allAppointments = res.data;
-        setAppointments(allAppointments);
-        setPage(0);
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    if (user && user.accessToken) {
+
+      axios.get("http://localhost:8080/api/appointments/")
+        .then(res => {
+          let allAppointments = res.data;
+          setAppointments(allAppointments);
+          setPage(0);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    } else {
+      navigate("/admin");
+    }
   }, []);
 
   const calendarChange = (calDate) => {

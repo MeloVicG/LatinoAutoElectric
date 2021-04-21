@@ -11,16 +11,21 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
 
     const [showForm, setShowForm] = useState(false);
     const [buttonName, setButtonName] = useState("Add Comments");
+    const user = JSON.parse(localStorage.getItem('user'));
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/appointments/" + selectedId)
-            .then(res => {
-                let data = res.data;
-                setSelectedAppointment(data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        if (user && user.accessToken) {
+            axios.get("http://localhost:8080/api/appointments/" + selectedId)
+                .then(res => {
+                    let data = res.data;
+                    setSelectedAppointment(data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        } else {
+            navigate("/admin");
+        }
     }, []);
 
     let hidden = <></>;
