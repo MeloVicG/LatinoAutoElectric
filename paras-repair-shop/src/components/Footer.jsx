@@ -23,6 +23,7 @@ const Footer = () => {
                     SaSS</p>
             </div>
         </footer>
+
     )
 }
 

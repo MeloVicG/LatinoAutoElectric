@@ -42,6 +42,10 @@ const AdminLogin = () => {
                     <input id={styles.loginButton} type="submit" value="Login" />
                 </div>
             </form>
+            <br/>
+            <h4>to view admin page</h4>
+            <p>username : guest</p>
+            <p>password : guest</p>
         </div>
 
     )

@@ -64,9 +64,9 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         console.log("time? " + time);
     };
 
-    const addContact = (appointment) => {
-        setAppointments([...appointments, appointment])
-    };
+    // const addContact = (appointment) => {
+    //     setAppointments([...appointments, appointment])
+    // };
 
     const handleCheckbox = (e) => {
         if (serviceTypeArray.includes(e.target.value)) {
@@ -122,7 +122,8 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
         axios.post('http://localhost:8080/api/appointments/', newContact)
             .then(res => {
                 console.log("axios.post Response: ", res);
-                addContact(res.data);
+                // addContact(res.data);
+                setAppointments([...appointments, res.data]) //newContact can be used
                 sendEmail(e.target);
                 navigate('/success');
             })
