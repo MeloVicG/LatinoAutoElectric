@@ -104,69 +104,6 @@ const UpdateAllFields = ({ selectedAppointment, setSelectedAppointment }) => {
                         <label> Year:</label>
                         <input type="number" onChange={e => setYear(e.target.value)} value={year} />
                     </div>
-                    {/* <div >
-                            <label>Reason for Visit:</label>
-                            <div className={styles.serviceCheckboxes}>
-                                <div className={styles.serviceType}>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />
-                                        <label for="vehicle3"> Oil Change </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />
-                                        <label for="vehicle3"> Oil Change </label>
-                                    </div>
-                                </div>
-                                <div className={styles.serviceType}>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />
-                                        <label for="vehicle3"> Oil Change </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                    </div>
-                                </div>
-                                <div className={styles.serviceType}>
-                                    <div>
-                                        <input type="checkbox" name="battery" value="battery" />
-                                        <label for="vehicle1"> Battery Service </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="vehicle2" value="Car" />
-                                        <label for="vehicle2"> Break Service </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
                     <div >
                         <label>Additional Comments:</label>
                         <div>

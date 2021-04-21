@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import repair from '../static/images/vehicle_repair2.jpg';
 import engine from '../static/images/engine3.jpg';
 import mustang from '../static/images/mustang2.jpg';
@@ -7,10 +6,13 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 const SliderCarousel = () => {
+
     const [index, setIndex] = useState(0);
+
     const handleImage = (newIndex) => {
         setIndex(newIndex);
     };
+
     return (
         <Carousel activeIndex={index} onSelect={handleImage} className="w-60" height="800px">
             <Carousel.Item >

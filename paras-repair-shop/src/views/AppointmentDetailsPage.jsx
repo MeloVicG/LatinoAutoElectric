@@ -104,8 +104,7 @@ const AppointmentDetailsPage = ({ selectedId, selectedAppointment, setSelectedAp
             <p>{selectedAppointment.mechanicComments}</p>
             {selectedAppointment.serviceComplete === true ? <p>Service Complete!</p> : <></>}
             <div>
-                <Link to="/update-all-fields"><button>Update</button></Link> |<button onClick={handleComments}>{buttonName}</button> |
-                <button onClick={handleServiceComplete}>Complete</button> | <button onClick={(e) => handleDelete(selectedAppointment.id)}>Delete</button>
+                <Link to="/update-all-fields"><button>Update</button></Link> | <button onClick={handleComments}>{buttonName}</button> | <button onClick={handleServiceComplete}>Complete</button> | <button onClick={(e) => handleDelete(selectedAppointment.id)}>Delete</button>
             </div>
             {showForm ?
                 <div>
