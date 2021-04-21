@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import axios from 'axios';
+import styles from '../styles/AdminLogin.module.scss';
 
 
 const AdminLogin = () => {
@@ -17,6 +18,7 @@ const AdminLogin = () => {
             .then(res => {
                 if (res.data.accessToken) {
                     localStorage.setItem("user", JSON.stringify(res.data));
+                    navigate("/dashboard");
                 }
             })
             .catch(err => {
@@ -28,11 +30,17 @@ const AdminLogin = () => {
         <div>
             <h1>Admin Login</h1>
             <form onSubmit={handleLogin}>
-                <label>Username</label>
-                <input type="text" onChange={(e) => { setUsername(e.target.value) }} />
-                <label>Password</label>
-                <input type="text" onChange={(e) => { setPassword(e.target.value) }} />
-                <input type="submit" value="Login" />
+                <div className={styles.login}>
+                    <div className={styles.loginBlock}>
+                        <label>Username: </label>
+                        <input type="text" onChange={(e) => { setUsername(e.target.value) }} />
+                    </div>
+                    <div className={styles.loginBlock}>
+                        <label>Password: </label>
+                        <input type="password" onChange={(e) => { setPassword(e.target.value) }} />
+                    </div>
+                    <input id={styles.loginButton} type="submit" value="Login" />
+                </div>
             </form>
         </div>
 

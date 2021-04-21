@@ -16,7 +16,7 @@ const AppointmentList = ({ appointmentList, selectedId, setSelectedId }) => {
                 appointmentList.map((appoint) =>
                     <div className={styles.appointmentGroup} onClick={() => handleSelection(`${appoint.id}`)} key={appoint.id}>
                         <div className={styles.appointmentLeft}>
-                            <p>{appoint.time}</p>
+                            <p>{appoint.date} - {appoint.time}</p>
                         </div>
                         <div className={styles.appointmentRight}>
                             <p>{appoint.firstName} {appoint.lastName}</p>

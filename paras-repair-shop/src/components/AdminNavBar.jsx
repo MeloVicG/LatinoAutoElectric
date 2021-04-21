@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from '@reach/router';
+import { navigate, Link } from '@reach/router';
 import styles from '../styles/NavBar.module.scss';
+
 // import CarLogo from '../components/CarLogo'
 
 const AdminNavBar = ({ page, setPage }) => {
@@ -17,6 +18,13 @@ const AdminNavBar = ({ page, setPage }) => {
         setAdminNav(bar);
         console.log("bar? " + bar);
     };
+
+    const logout = (e) => {
+        localStorage.removeItem("user");
+        alert("Log out successful!");
+        navigate("/admin");
+    };
+
     return (
         <div className="navBarParent">
             <nav className="navBar">
@@ -27,6 +35,9 @@ const AdminNavBar = ({ page, setPage }) => {
                     </div>
                 )}
             </nav>
+            <div className={styles.logoutWrapper}>
+                <button className={styles.logout} onClick={logout}>Log Out</button>
+            </div>
         </div>
     )
 }
