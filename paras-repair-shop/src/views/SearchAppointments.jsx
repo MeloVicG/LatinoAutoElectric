@@ -7,7 +7,7 @@ import styles from '../styles/SearchDisplay.module.scss';
 
 
 
-const SearchAppointments = ({ appointments, setAppointments, selectedId, setSelectedId, appointmentList, setAppointmentList }) => {
+const SearchAppointments = ({ appointments, setAppointments, selectedId, setSelectedId, appointmentList, setAppointmentList, page, setPage }) => {
     const [input, setInput] = useState('');
     const [appointmentListDefault, setAppointmentListDefault] = useState();
 
@@ -17,6 +17,7 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
                 let data = res.data;
                 setAppointmentList(data);
                 setAppointmentListDefault(data);
+                setPage(1);
             })
             .catch(err => {
                 console.log(err);
@@ -25,7 +26,7 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
 
     const updateInput = (input) => {
         let completedAppointments = appointments.filter(appoint => {
-            return appoint.serviceComplete === null;
+            return appoint.serviceComplete !== true;
         })
         const filtered = completedAppointments.filter(appoint => {
             return appoint.email.includes(input);
@@ -38,7 +39,7 @@ const SearchAppointments = ({ appointments, setAppointments, selectedId, setSele
     return (
         <>
             <h1>Latinos Auto Electric Admin</h1>
-            <AdminNavBar />
+            <AdminNavBar page={page} />
             <h1>Appointment List</h1>
             <SearchBar input={input} updateInput={updateInput} onChange={updateInput} />
             {input.length > 0 ?

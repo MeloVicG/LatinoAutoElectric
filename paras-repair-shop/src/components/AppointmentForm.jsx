@@ -119,7 +119,7 @@ const AppointmentForm = ({ appointments, setAppointments, }) => {
             serviceType,
             clientComments
         };
-        axios.post('http://localhost:8080/api/appointments', newContact)
+        axios.post('http://localhost:8080/api/appointments/', newContact)
             .then(res => {
                 console.log("axios.post Response: ", res);
                 addContact(res.data);

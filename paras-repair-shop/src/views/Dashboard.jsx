@@ -7,7 +7,7 @@ import 'react-calendar/dist/Calendar.css';
 import styles from '../styles/Calendar.module.scss';
 import AdminNavBar from '../components/AdminNavBar';
 
-const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId }) => {
+const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId, page, setPage }) => {
 
   const [validation, setValidation] = useState("");
   const [userResults, setUserResults] = useState([]);
@@ -19,6 +19,7 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId })
       .then(res => {
         let allAppointments = res.data;
         setAppointments(allAppointments);
+        setPage(0);
       })
       .catch(err => {
         console.log(err);
@@ -46,7 +47,7 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId })
   return (
     <div>
       <h1>Latinos Auto Electric Admin</h1>
-      <AdminNavBar />
+      <AdminNavBar page={page} />
       <h1 className={styles.title}>Calendar</h1>
       <div className={styles.calendarContainer}>
         <div className="result-calendar" >
