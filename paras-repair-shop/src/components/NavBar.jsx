@@ -13,6 +13,7 @@ const NavBar = ({ page, setPage }) => {
         <Link to="/services" style={{ textDecoration: "none" }}>Services</Link>,
         <Link to="/about" style={{ textDecoration: "none" }}>About</Link>,
         <Link to="/faq" style={{ textDecoration: "none" }}>FAQ</Link>
+
     ]);
     const [activeNav, setActiveNav] = useState("")
 

@@ -37,6 +37,7 @@ const FaqPage = ({ page, setPage }) => {
         },
     ]
 
+
     useEffect(() => {
         setPage(4);
     }, []);
@@ -58,7 +59,7 @@ const FaqPage = ({ page, setPage }) => {
 
 
     return (
-        <div className="wrapper">
+        <div className="wrapper" style={{height:"950px"}}>
             <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
             <NavBar page={page} />
             <div className={styles.container}>
@@ -84,13 +85,14 @@ const FaqPage = ({ page, setPage }) => {
                             </div>
                         )
                         }
+                        <p>{answer}</p>
                     </div>
 
 
 
                 </div>
             </div>
-            <Footer />
+            <Footer className="faqFooter"/>
         </div>
     )
 }
