@@ -22,6 +22,8 @@ const HomePage = ({page, setPage}) => {
         <div className={styles.App}>
             <div className={styles.wrapper}>
                 <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
+            <Link to="/dashboard" style={{marginLeft:"1500px", backgroundColor:"purple"}}>Admin Dashboard</Link>
+
 
                 {/* has css */}
                 <NavBar page={page}/>
