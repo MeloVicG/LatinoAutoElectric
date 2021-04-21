@@ -9,11 +9,6 @@ const FaqPage = ({page, setPage}) => {
     
 
     const [answer, setAnswer] = useState("");
-    const [answer1, setAnswer1] = useState("");
-    const [answer2, setAnswer2] = useState("");
-    const [answer3, setAnswer3] = useState("");
-    const [answer4, setAnswer4] = useState("");
-    const [answer5, setAnswer5] = useState("");
 
     useEffect(() => {
         setPage(4)
@@ -21,7 +16,7 @@ const FaqPage = ({page, setPage}) => {
 
 
     return (
-        <div className="wrapper">
+        <div className="wrapper" style={{height:"950px"}}>
             <h1 className={styles.titleBox}>Latinos Auto Electric</h1>
             <NavBar page={page}/>
             <div className={styles.container}>
@@ -46,25 +41,13 @@ const FaqPage = ({page, setPage}) => {
                         <br />
                         <br />
                         <p>{answer}</p>
-                        {/* 
-                        {answer.map((val, index) =>
-                            <div key={index}>
-                                <h3>{val.A2}</h3>
-                            </div>
-                        )} */}
-                        {/* {AA1} */}
-                        {/* {A1}
-                        {A2}
-                        {A3}
-                        {A4}
-                        {A5} */}
                     </div>
 
 
 
                 </div>
             </div>
-            <Footer />
+            <Footer className="faqFooter"/>
         </div>
     )
 }

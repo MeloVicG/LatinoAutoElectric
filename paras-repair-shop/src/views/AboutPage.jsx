@@ -26,7 +26,7 @@ const AboutPage = ({page,setPage}) => {
             </div>
             <div className={styles.infoSection}>
                 <p>My family built this shop from the ground up to help service cars for our neighbors. We work to this day as a family owned business looking to help out families near us.</p>
-                <img src="" alt="founders family"/>
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-chevrolet-corvette-z06-1607016574.jpg?crop=0.737xw:0.738xh;0.181xw,0.218xh&resize=640:*" alt="founders family"/>
             </div>
             <div className={styles.infoSection}>
                 <img src={camaro} alt="vintage car"/>
