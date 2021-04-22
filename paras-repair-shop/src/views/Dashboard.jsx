@@ -26,7 +26,7 @@ const Dashboard = ({ appointments, setAppointments, selectedId, setSelectedId, p
           setPage(0);
         })
         .catch(err => {
-          console.log(err);
+          console.log("error part: " + err);
         })
     } else {
       navigate("/admin");
