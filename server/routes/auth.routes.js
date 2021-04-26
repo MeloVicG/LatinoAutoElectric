@@ -1,5 +1,5 @@
 const { verifySignUp } = require("../middleware");
-const controller = require("../controllers/auth.controller.js");
+const controller = require("../Controllers/auth.controller.js");
 
 module.exports = function (app) {
     app.use(function (req, res, next) {
